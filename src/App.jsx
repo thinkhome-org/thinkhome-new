@@ -1,68 +1,73 @@
-import './App.css'
+import { useState, useEffect, useRef } from 'react';
+import HeroSection from './components/HeroSection';
+import KontaktPage from './components/KontaktPage';
+import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
+import sluzby from './data/sluzby.json';
 
-function App() {
-  return (
-    <div className="hero-page">
-      <iframe
-        src="https://www.reactbits.dev/backgrounds/prism"
-        className="hero-page__prism-bg"
-        title="Prism background"
-        tabIndex={-1}
-        aria-hidden
-      />
-      <div className="hero-page__overlay" aria-hidden />
+// Phase sequence: idle → covering (curtain sweeps in) → swap → uncovering (curtain sweeps out) → idle
+const SWEEP = 320;
 
-      <header className="hero-header">
-        <a href="/" className="hero-header__logo">
-          &lt;thinkhome&gt;
-        </a>
-        <nav className="hero-header__nav">
-          <span className="hero-header__squircle" aria-hidden>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </span>
-          <a href="/" className="hero-header__nav-link hero-header__nav-link--active">
-            Domů
-          </a>
-          <a href="/o-nas" className="hero-header__nav-link">
-            O nás
-          </a>
-          <a href="/sluzby" className="hero-header__nav-link">
-            Služby
-          </a>
-        </nav>
-        <a href="/kontakt" className="hero-header__contact">
-          &lt;Kontakt&gt;
-        </a>
-      </header>
+export default function App() {
+    const [page, setPage] = useState(window.location.hash);
+    const [phase, setPhase] = useState('idle');
+    const nextPage = useRef(null);
 
-      <main className="hero-main">
-        <h1 className="hero-main__headline">
-          <span className="hero-main__headline-line">Kompletní IT</span>
-          <span className="hero-main__headline-brackets" aria-hidden>
-            &lt;&gt;
-          </span>
-          <span className="hero-main__headline-line">pod jednou střechou.</span>
-        </h1>
-        <p className="hero-main__subtext">
-          Zjednodušujeme IT tak, aby se firmy nenechaly nachytat a nemusely řešit
-          několik dodavatelů zároveň. Věnujte se byznysu, IT nechte na nás.
-        </p>
-        <div className="hero-main__ctas">
-          <a href="/sluzby" className="hero-main__cta">
-            ZJISTIT VÍCE
-          </a>
-          <a href="/kontakt" className="hero-main__cta hero-main__cta--primary">
-            KONTAKTUJTE NÁS
-            <span className="hero-main__cta-arrow" aria-hidden>
-              →
-            </span>
-          </a>
-        </div>
-      </main>
-    </div>
-  )
+    useEffect(() => {
+        const onHash = () => {
+            const hash = window.location.hash;
+            if (hash === page) return;
+            nextPage.current = hash;
+            setPhase('covering');
+        };
+        window.addEventListener("hashchange", onHash);
+        return () => window.removeEventListener("hashchange", onHash);
+    }, [page]);
+
+    useEffect(() => {
+        if (phase === 'covering') {
+            const t = setTimeout(() => {
+                setPage(nextPage.current);
+                setPhase('uncovering');
+            }, SWEEP);
+            return () => clearTimeout(t);
+        }
+        if (phase === 'uncovering') {
+            const t = setTimeout(() => setPhase('idle'), SWEEP);
+            return () => clearTimeout(t);
+        }
+    }, [phase]);
+
+    const curtainStyle = {
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        background: '#0d23b8',
+        pointerEvents: phase !== 'idle' ? 'all' : 'none',
+        transform: phase === 'idle'
+            ? 'translateX(-100%)'
+            : phase === 'covering'
+            ? 'translateX(0%)'
+            : 'translateX(100%)',
+        transition: phase === 'idle'
+            ? 'none'
+            : `transform ${SWEEP}ms cubic-bezier(0.76, 0, 0.24, 1)`,
+    };
+
+    return (
+        <>
+            <div style={{ background: '#1533e8', minHeight: '100vh' }}>
+                {(() => {
+                    if (page === "#kontakt") return <KontaktPage />;
+                    if (page === "#sluzby") return <SluzbyPage />;
+                    if (page.startsWith("#sluzby/")) {
+                        const id = page.slice("#sluzby/".length);
+                        const service = sluzby.find(s => s.id === id);
+                        return service ? <ServiceDetail service={service} /> : <SluzbyPage />;
+                    }
+                    return <HeroSection />;
+                })()}
+            </div>
+            <div style={curtainStyle} />
+        </>
+    );
 }
-
-export default App

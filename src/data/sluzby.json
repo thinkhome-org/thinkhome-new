@@ -1,0 +1,80 @@
+[
+  {
+    "id": "spravovane-it",
+    "title": "Spravované IT",
+    "subtitle": "Kompletní péče o vaši infrastrukturu",
+    "description": "Přebíráme plnou odpovědnost za vaše IT. Od serverů přes sítě až po koncové stanice — vše monitorujeme, udržujeme a opravujeme proaktivně, než se z drobného problému stane výpadek.",
+    "details": [
+      "Nepřetržitý monitoring 24/7",
+      "Proaktivní správa serverů a sítí",
+      "Správa koncových stanic a zařízení",
+      "Pravidelné reporty a konzultace",
+      "SLA s garantovanou dobou odezvy"
+    ]
+  },
+  {
+    "id": "kyberneticka-bezpecnost",
+    "title": "Kybernetická bezpečnost",
+    "subtitle": "Ochrana před moderními hrozbami",
+    "description": "Audity, penetrační testy, nastavení firewallu, školení zaměstnanců. Bezpečnost není produkt — je to proces, který s vámi průběžně ladíme.",
+    "details": [
+      "Bezpečnostní audity a penetrační testy",
+      "Nastavení a správa firewallu",
+      "Ochrana emailové komunikace",
+      "Školení zaměstnanců — phishing a sociální inženýrství",
+      "Incident response a krizová podpora"
+    ]
+  },
+  {
+    "id": "cloud-a-infrastruktura",
+    "title": "Cloud & infrastruktura",
+    "subtitle": "Moderní prostředí pro váš byznys",
+    "description": "Navrhujeme a provozujeme cloudová řešení na míru — ať už jde o Microsoft 365, privátní cloud nebo hybridní infrastrukturu. Migrujeme bezpečně, bez výpadků.",
+    "details": [
+      "Migrace do cloudu (Microsoft 365, Azure)",
+      "Návrh a správa privátního cloudu",
+      "Hybridní infrastruktura",
+      "Zálohování a disaster recovery",
+      "Licencování a optimalizace nákladů"
+    ]
+  },
+  {
+    "id": "helpdesk",
+    "title": "Helpdesk & podpora",
+    "subtitle": "Lidská pomoc vždy po ruce",
+    "description": "Váš tým má vždy koho zavolat. Poskytujeme podporu vzdáleně i na místě — rychle, srozumitelně, bez zbytečného žargonu.",
+    "details": [
+      "Vzdálená i on-site podpora",
+      "Ticketovací systém s přehledem požadavků",
+      "Podpora v češtině i angličtině",
+      "Pravidelné návštěvy na pracovišti",
+      "Správa uživatelských účtů a přístupů"
+    ]
+  },
+  {
+    "id": "site-a-konektivita",
+    "title": "Sítě & konektivita",
+    "subtitle": "Stabilní základ pro vaši práci",
+    "description": "Navrhujeme a instalujeme podnikové sítě — WiFi, LAN, VPN. Postaráme se, aby vaše připojení bylo rychlé, spolehlivé a bezpečné.",
+    "details": [
+      "Návrh a instalace LAN/WiFi sítí",
+      "VPN a vzdálený přístup",
+      "Správa síťových prvků (switch, router, AP)",
+      "Segmentace sítě a VLAN",
+      "Dohled nad dostupností a výkonem"
+    ]
+  },
+  {
+    "id": "it-poradenstvi",
+    "title": "IT poradenství",
+    "subtitle": "Strategický pohled na vaše IT",
+    "description": "Pomáháme firmám rozhodovat se o IT strategicky — ne jen hasit požáry. Analyzujeme váš stav, navrhneme plán a provedeme vás změnou.",
+    "details": [
+      "IT audit a analýza stávajícího stavu",
+      "Technologická strategie a roadmapa",
+      "Výběr a implementace nových systémů",
+      "Správa IT projektů",
+      "Nezávislé poradenství bez střetu zájmů"
+    ]
+  }
+]
