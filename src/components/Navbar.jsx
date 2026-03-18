@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useAppNavigate } from "../context/navigate";
 
-export default function Navbar() {
+export default function Navbar({ light = false }) {
     const [open, setOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Navbar() {
 
     const links = [
         { label: "Domů", href: "/", path: "/" },
-        { label: "O nás", href: "#o-nas", path: null },
+        { label: "O nás", href: "/o-nas", path: "/o-nas" },
         { label: "Služby", href: "/sluzby", path: "/sluzby" },
     ];
 
@@ -50,7 +50,7 @@ export default function Navbar() {
             >
                 {/* Logo */}
                 <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} style={{ textDecoration: "none" }}>
-                    <span style={{ color: "#fff", fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.02em" }}>
+                    <span style={{ color: light ? "#1533e8" : "#fff", fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.02em" }}>
                         &lt;thinkhome&gt;
                     </span>
                 </a>
@@ -71,23 +71,23 @@ export default function Navbar() {
                             href={href}
                             onClick={path ? (e) => { e.preventDefault(); navigate(path); } : undefined}
                             style={{
-                                color: "rgba(255,255,255,0.6)",
+                                color: light ? "rgba(21,51,232,0.55)" : "rgba(255,255,255,0.6)",
                                 fontWeight: 500,
                                 fontSize: "0.825rem",
                                 textDecoration: "none",
                                 letterSpacing: "0.01em",
-                                transition: "color 0.2s, background 0.2s, text-shadow 0.2s",
+                                transition: "color 0.2s, background 0.2s",
                                 padding: "0.15rem 0.75rem",
                                 borderRadius: "9999px",
                                 background: "transparent",
                             }}
                             onMouseEnter={(e) => {
-                                e.currentTarget.style.color = "#fff";
-                                e.currentTarget.style.background = "rgba(255,255,255,0.08)";
-                                e.currentTarget.style.textShadow = "0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35)";
+                                e.currentTarget.style.color = light ? "#1533e8" : "#fff";
+                                e.currentTarget.style.background = light ? "rgba(21,51,232,0.07)" : "rgba(255,255,255,0.08)";
+                                e.currentTarget.style.textShadow = light ? "none" : "0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35)";
                             }}
                             onMouseLeave={(e) => {
-                                e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+                                e.currentTarget.style.color = light ? "rgba(21,51,232,0.55)" : "rgba(255,255,255,0.6)";
                                 e.currentTarget.style.background = "transparent";
                                 e.currentTarget.style.textShadow = "none";
                             }}
@@ -96,13 +96,13 @@ export default function Navbar() {
                         </a>
                     ))}
 
-                    <span style={{ width: "1px", height: "16px", background: "rgba(255,255,255,0.2)", margin: "0 0.5rem" }} />
+                    <span style={{ width: "1px", height: "16px", background: light ? "rgba(21,51,232,0.18)" : "rgba(255,255,255,0.2)", margin: "0 0.5rem" }} />
 
                     <a
                         href="/kontakt"
                         onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
                         style={{
-                            color: "#1533e8",
+                            color: light ? "#fff" : "#1533e8",
                             fontWeight: 700,
                             fontSize: "0.825rem",
                             textDecoration: "none",
@@ -110,9 +110,9 @@ export default function Navbar() {
                             padding: "0.15rem 0.75rem",
                             borderRadius: "9999px",
                             transition: "box-shadow 0.15s",
-                            background: "#fff",
+                            background: light ? "#1533e8" : "#fff",
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
+                        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = light ? "0 0 0 3px rgba(21,51,232,0.2)" : "0 0 0 3px rgba(255,255,255,0.3)")}
                         onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
                     >
                         Kontakt
@@ -142,7 +142,7 @@ export default function Navbar() {
                             display: "block",
                             width: "22px",
                             height: "2px",
-                            background: "#fff",
+                            background: light ? "#1533e8" : "#fff",
                             borderRadius: "2px",
                             transition: "transform 0.25s ease, opacity 0.25s ease",
                             transform: open

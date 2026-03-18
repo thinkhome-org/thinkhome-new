@@ -4,6 +4,7 @@ import { NavigationContext } from './context/navigate';
 import HeroSection from './components/HeroSection';
 import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
+import ONasPage from './components/ONasPage';
 import sluzby from './data/sluzby.json';
 
 const SWEEP = 320;
@@ -53,6 +54,7 @@ export default function App() {
                     <Route path="/" element={<HeroSection />} />
                     <Route path="/sluzby" element={<SluzbyPage />} />
                     <Route path="/sluzby/:id" element={<ServiceDetailWrapper />} />
+                    <Route path="/o-nas" element={<ONasPage />} />
                     <Route path="/kontakt" element={<KontaktPage />} />
                 </Routes>
             </div>
