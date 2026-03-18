@@ -24,8 +24,8 @@ export function ServiceDetail({ service }) {
 
             <div style={{
                 padding: "clamp(6rem, 14vw, 10rem) clamp(1.5rem, 8vw, 7rem) clamp(4rem, 8vw, 6rem)",
-                maxWidth: "860px",
             }}>
+                {/* Back button */}
                 <button
                     onClick={goBack}
                     style={{
@@ -39,7 +39,7 @@ export function ServiceDetail({ service }) {
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
                         color: "rgba(255,255,255,0.5)",
-                        marginBottom: "3rem",
+                        marginBottom: "clamp(2rem, 5vw, 3.5rem)",
                         transition: "color 0.15s",
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.color = "#fff"}
@@ -51,61 +51,86 @@ export function ServiceDetail({ service }) {
                     Zpět na služby
                 </button>
 
-                <h1 style={{
-                    fontFamily: "'Manrope Variable', Manrope, sans-serif",
-                    fontSize: "clamp(2.4rem, 6vw, 4rem)",
-                    fontWeight: 800,
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1.05,
-                    margin: "0 0 1rem",
-                    color: "#fff",
-                }}>
-                    {service.title}
-                </h1>
-
-                <p style={{
-                    fontSize: "clamp(0.9rem, 1.4vw, 1.05rem)",
-                    fontWeight: 400,
-                    color: "rgba(255,255,255,0.75)",
-                    lineHeight: 1.7,
-                    margin: "0 0 3.5rem",
-                    maxWidth: "52ch",
-                }}>
-                    {service.description}
-                </p>
-
-                <div style={{
-                    width: "100%",
-                    height: "1px",
-                    background: "rgba(255,255,255,0.1)",
-                    marginBottom: "2.5rem",
-                }} />
-
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                    {service.details.map((item, i) => (
-                        <li key={i} style={{
-                            display: "flex",
-                            alignItems: "baseline",
-                            gap: "1.25rem",
-                            padding: "1.1rem 0",
-                            borderBottom: "1px solid rgba(255,255,255,0.07)",
-                            fontSize: "clamp(0.95rem, 1.4vw, 1.05rem)",
-                            fontWeight: 500,
-                            color: "rgba(255,255,255,0.9)",
+                {/* Two-column layout */}
+                <div className="sd-grid">
+                    {/* Left — title + description */}
+                    <div className="sd-left">
+                        <h1 style={{
+                            fontFamily: "'Manrope Variable', Manrope, sans-serif",
+                            fontSize: "clamp(2.4rem, 4vw, 3.5rem)",
+                            fontWeight: 800,
+                            letterSpacing: "-0.03em",
+                            lineHeight: 1.05,
+                            margin: "0 0 1.5rem",
+                            color: "#fff",
                         }}>
-                            <span style={{
-                                fontSize: "0.65rem",
-                                fontWeight: 600,
-                                letterSpacing: "0.1em",
-                                color: "rgba(255,255,255,0.3)",
-                                flexShrink: 0,
-                                fontVariantNumeric: "tabular-nums",
-                            }}>0{i + 1}</span>
-                            {item}
-                        </li>
-                    ))}
-                </ul>
+                            {service.title}
+                        </h1>
+
+                        <p style={{
+                            fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
+                            fontWeight: 400,
+                            color: "rgba(255,255,255,0.65)",
+                            lineHeight: 1.75,
+                            margin: 0,
+                        }}>
+                            {service.description}
+                        </p>
+                    </div>
+
+                    {/* Right — details list */}
+                    <div className="sd-right">
+                        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                            {service.details.map((item, i) => (
+                                <li key={i} style={{
+                                    display: "flex",
+                                    alignItems: "baseline",
+                                    gap: "1.25rem",
+                                    padding: "1.1rem 0",
+                                    borderBottom: "1px solid rgba(255,255,255,0.07)",
+                                    fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
+                                    fontWeight: 500,
+                                    color: "rgba(255,255,255,0.9)",
+                                }}>
+                                    <span style={{
+                                        fontSize: "0.65rem",
+                                        fontWeight: 600,
+                                        letterSpacing: "0.1em",
+                                        color: "rgba(255,255,255,0.3)",
+                                        flexShrink: 0,
+                                        fontVariantNumeric: "tabular-nums",
+                                    }}>0{i + 1}</span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+            <style>{`
+                .sd-grid {
+                    display: grid;
+                    grid-template-columns: 2fr 3fr;
+                    gap: clamp(3rem, 6vw, 7rem);
+                    align-items: start;
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                    padding-top: clamp(2.5rem, 5vw, 4rem);
+                }
+                .sd-left {
+                    position: sticky;
+                    top: clamp(5rem, 10vw, 7rem);
+                }
+                @media (max-width: 767px) {
+                    .sd-grid {
+                        grid-template-columns: 1fr;
+                        gap: 2rem;
+                    }
+                    .sd-left {
+                        position: static;
+                    }
+                }
+            `}</style>
             <Footer />
         </div>
     );
@@ -181,6 +206,12 @@ export default function SluzbyPage() {
                     .sluzba-block:hover { background: rgba(255,255,255,0.04); }
                     .sluzba-block:hover .sluzba-arrow { color: #fff; }
                 }
+                @media (max-width: 767px) {
+                    .sluzba-block {
+                        padding: 1.75rem 0;
+                        min-height: 180px;
+                    }
+                }
 
 .sluzba-bottom {
                     display: flex;
@@ -255,6 +286,12 @@ export default function SluzbyPage() {
                 @media (hover: hover) {
                     .sluzba-block:hover .sluzba-arrow {
                         transform: translate(2px, -2px);
+                    }
+                }
+                @media (max-width: 767px) {
+                    .sluzba-arrow {
+                        bottom: 1.75rem;
+                        right: 0;
                     }
                 }
             `}</style>
