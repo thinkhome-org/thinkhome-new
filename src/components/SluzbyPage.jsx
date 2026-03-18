@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import sluzby from "../data/sluzby.json";
+import { useAppNavigate } from "../context/navigate";
 
 export function ServiceDetail({ service }) {
-    const goBack = () => { window.location.hash = "#sluzby"; };
+    const navigate = useAppNavigate();
+    const goBack = () => navigate('/sluzby');
+
+    useEffect(() => {
+        document.title = `${service.title} – thinkhome`;
+        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+    }, [service.title]);
 
     return (
         <div style={{
@@ -104,7 +112,12 @@ export function ServiceDetail({ service }) {
 }
 
 export default function SluzbyPage() {
-    const navigate = (id) => { window.location.hash = `#sluzby/${id}`; };
+    const navigate = useAppNavigate();
+
+    useEffect(() => {
+        document.title = "Služby – thinkhome";
+        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+    }, []);
 
     return (
         <div style={{
@@ -121,10 +134,10 @@ export default function SluzbyPage() {
                         <div
                             key={service.id}
                             className="sluzba-block"
-                            onClick={() => navigate(service.id)}
+                            onClick={() => navigate(`/sluzby/${service.id}`)}
                             role="button"
                             tabIndex={0}
-                            onKeyDown={(e) => e.key === "Enter" && navigate(service.id)}
+                            onKeyDown={(e) => e.key === "Enter" && navigate(`/sluzby/${service.id}`)}
                         >
                             <div className="sluzba-bottom">
                                 <h2 className="sluzba-title">{service.title}</h2>
@@ -164,8 +177,10 @@ export default function SluzbyPage() {
                     outline: none;
                     transition: background 0.15s;
                 }
-                .sluzba-block:hover { background: rgba(255,255,255,0.04); }
-                .sluzba-block:hover .sluzba-arrow { color: #fff; }
+                @media (hover: hover) {
+                    .sluzba-block:hover { background: rgba(255,255,255,0.04); }
+                    .sluzba-block:hover .sluzba-arrow { color: #fff; }
+                }
 
 .sluzba-bottom {
                     display: flex;
@@ -197,8 +212,10 @@ export default function SluzbyPage() {
                     grid-template-rows: 0fr;
                     transition: grid-template-rows 0.35s cubic-bezier(0.25, 0, 0, 1);
                 }
-                .sluzba-block:hover .sluzba-desc-wrap {
-                    grid-template-rows: 1fr;
+                @media (hover: hover) {
+                    .sluzba-block:hover .sluzba-desc-wrap {
+                        grid-template-rows: 1fr;
+                    }
                 }
 
                 .sluzba-desc-inner {
@@ -217,8 +234,10 @@ export default function SluzbyPage() {
                     transition: opacity 0.25s ease;
                     pointer-events: none;
                 }
-                .sluzba-block:hover .sluzba-desc {
-                    opacity: 1;
+                @media (hover: hover) {
+                    .sluzba-block:hover .sluzba-desc {
+                        opacity: 1;
+                    }
                 }
 
                 @media (hover: none) {
@@ -233,8 +252,10 @@ export default function SluzbyPage() {
                     color: rgba(255,255,255,0.3);
                     transition: color 0.15s, transform 0.15s;
                 }
-                .sluzba-block:hover .sluzba-arrow {
-                    transform: translate(2px, -2px);
+                @media (hover: hover) {
+                    .sluzba-block:hover .sluzba-arrow {
+                        transform: translate(2px, -2px);
+                    }
                 }
             `}</style>
             <Footer />

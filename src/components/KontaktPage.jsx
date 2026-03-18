@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -64,6 +64,11 @@ function LegalItem({ label, value }) {
 }
 
 export default function KontaktPage() {
+    useEffect(() => {
+        document.title = "Kontakt – thinkhome";
+        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+    }, []);
+
     return (
         <div style={{
             minHeight: "100vh",

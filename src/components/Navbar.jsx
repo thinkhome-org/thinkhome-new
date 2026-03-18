@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useAppNavigate } from "../context/navigate";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -22,10 +23,12 @@ export default function Navbar() {
         return () => { document.body.style.overflow = ""; };
     }, [open]);
 
+    const navigate = useAppNavigate();
+
     const links = [
-        { label: "Domů", href: "#" },
-        { label: "O nás", href: "#o-nas" },
-        { label: "Služby", href: "#sluzby" },
+        { label: "Domů", href: "/", path: "/" },
+        { label: "O nás", href: "#o-nas", path: null },
+        { label: "Služby", href: "/sluzby", path: "/sluzby" },
     ];
 
     return (
@@ -46,7 +49,7 @@ export default function Navbar() {
                 }}
             >
                 {/* Logo */}
-                <a href="#" style={{ textDecoration: "none" }}>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} style={{ textDecoration: "none" }}>
                     <span style={{ color: "#fff", fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.02em" }}>
                         &lt;thinkhome&gt;
                     </span>
@@ -62,10 +65,11 @@ export default function Navbar() {
                     }}
                     className="nav-desktop"
                 >
-                    {links.map(({ label, href }) => (
+                    {links.map(({ label, href, path }) => (
                         <a
                             key={label}
                             href={href}
+                            onClick={path ? (e) => { e.preventDefault(); navigate(path); } : undefined}
                             style={{
                                 color: "rgba(255,255,255,0.6)",
                                 fontWeight: 500,
@@ -95,7 +99,8 @@ export default function Navbar() {
                     <span style={{ width: "1px", height: "16px", background: "rgba(255,255,255,0.2)", margin: "0 0.5rem" }} />
 
                     <a
-                        href="#kontakt"
+                        href="/kontakt"
+                        onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
                         style={{
                             color: "#1533e8",
                             fontWeight: 700,
@@ -176,11 +181,14 @@ export default function Navbar() {
             >
                 {/* Nav links */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-                    {links.map(({ label, href }, i) => (
+                    {links.map(({ label, href, path }, i) => (
                         <a
                             key={label}
                             href={href}
-                            onClick={() => setOpen(false)}
+                            onClick={(e) => {
+                                if (path) { e.preventDefault(); navigate(path); }
+                                setOpen(false);
+                            }}
                             style={{
                                 color: "rgba(255,255,255,0.85)",
                                 fontWeight: 800,
@@ -235,8 +243,8 @@ export default function Navbar() {
                         IT pod jednou střechou
                     </p>
                     <a
-                        href="#kontakt"
-                        onClick={() => setOpen(false)}
+                        href="/kontakt"
+                        onClick={(e) => { e.preventDefault(); navigate('/kontakt'); setOpen(false); }}
                         style={{
                             display: "flex",
                             alignItems: "center",

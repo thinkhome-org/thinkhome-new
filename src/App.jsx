@@ -1,41 +1,34 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { NavigationContext } from './context/navigate';
 import HeroSection from './components/HeroSection';
 import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
 import sluzby from './data/sluzby.json';
 
-// Phase sequence: idle → covering (curtain sweeps in) → swap → uncovering (curtain sweeps out) → idle
 const SWEEP = 320;
 
+function ServiceDetailWrapper() {
+    const { id } = useParams();
+    const service = sluzby.find(s => s.id === id);
+    return service ? <ServiceDetail service={service} /> : <SluzbyPage />;
+}
+
 export default function App() {
-    const [page, setPage] = useState(window.location.hash);
     const [phase, setPhase] = useState('idle');
-    const nextPage = useRef(null);
+    const reactNavigate = useNavigate();
+    const timer = useRef(null);
 
-    useEffect(() => {
-        const onHash = () => {
-            const hash = window.location.hash;
-            if (hash === page) return;
-            nextPage.current = hash;
-            setPhase('covering');
-        };
-        window.addEventListener("hashchange", onHash);
-        return () => window.removeEventListener("hashchange", onHash);
-    }, [page]);
-
-    useEffect(() => {
-        if (phase === 'covering') {
-            const t = setTimeout(() => {
-                setPage(nextPage.current);
-                setPhase('uncovering');
-            }, SWEEP);
-            return () => clearTimeout(t);
-        }
-        if (phase === 'uncovering') {
-            const t = setTimeout(() => setPhase('idle'), SWEEP);
-            return () => clearTimeout(t);
-        }
-    }, [phase]);
+    const navigate = (path) => {
+        clearTimeout(timer.current);
+        setPhase('covering');
+        timer.current = setTimeout(() => {
+            window.scrollTo(0, 0);
+            reactNavigate(path);
+            setPhase('uncovering');
+            timer.current = setTimeout(() => setPhase('idle'), SWEEP);
+        }, SWEEP);
+    };
 
     const curtainStyle = {
         position: 'fixed',
@@ -54,20 +47,16 @@ export default function App() {
     };
 
     return (
-        <>
+        <NavigationContext.Provider value={navigate}>
             <div style={{ background: '#1533e8', minHeight: '100vh' }}>
-                {(() => {
-                    if (page === "#kontakt") return <KontaktPage />;
-                    if (page === "#sluzby") return <SluzbyPage />;
-                    if (page.startsWith("#sluzby/")) {
-                        const id = page.slice("#sluzby/".length);
-                        const service = sluzby.find(s => s.id === id);
-                        return service ? <ServiceDetail service={service} /> : <SluzbyPage />;
-                    }
-                    return <HeroSection />;
-                })()}
+                <Routes>
+                    <Route path="/" element={<HeroSection />} />
+                    <Route path="/sluzby" element={<SluzbyPage />} />
+                    <Route path="/sluzby/:id" element={<ServiceDetailWrapper />} />
+                    <Route path="/kontakt" element={<KontaktPage />} />
+                </Routes>
             </div>
             <div style={curtainStyle} />
-        </>
+        </NavigationContext.Provider>
     );
 }

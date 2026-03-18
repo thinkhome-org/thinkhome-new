@@ -1,6 +1,7 @@
 import Prism from "./Prism";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useAppNavigate } from "../context/navigate";
 
 const isSafari =
     typeof CSS !== "undefined" &&
@@ -9,6 +10,8 @@ const isSafari =
     !navigator.userAgent.includes("Chromium");
 
 export default function HeroSection() {
+    const navigate = useAppNavigate();
+
     return (
         <>
         <section
@@ -107,7 +110,7 @@ export default function HeroSection() {
                     {/* CTA — pinned to bottom */}
                     <div className="hero-cta">
                         <button className="hero-btn-underline">Zjistit více</button>
-                        <a href="#kontakt" className="hero-btn-arrow">
+                        <a href="/kontakt" onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }} className="hero-btn-arrow">
                             Kontaktujte nás <span>→</span>
                         </a>
                     </div>
@@ -275,10 +278,12 @@ export default function HeroSection() {
                     padding-bottom: 2px;
                     transition: border-color 0.2s, text-shadow 0.2s;
                 }
-                .hero-btn-underline:hover,
-                .hero-btn-arrow:hover {
-                    border-color: rgba(255,255,255,0.9);
-                    text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35);
+                @media (hover: hover) {
+                    .hero-btn-underline:hover,
+                    .hero-btn-arrow:hover {
+                        border-color: rgba(255,255,255,0.9);
+                        text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35);
+                    }
                 }
                 .hero-btn-arrow {
                     display: flex;
