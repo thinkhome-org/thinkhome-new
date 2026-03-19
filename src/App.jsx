@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { NavigationContext } from './context/navigate';
 import HeroSection from './components/HeroSection';
 import KontaktPage from './components/KontaktPage';
@@ -59,6 +60,7 @@ export default function App() {
                 </Routes>
             </div>
             <div style={curtainStyle} />
+            <SpeedInsights />
         </NavigationContext.Provider>
     );
 }
