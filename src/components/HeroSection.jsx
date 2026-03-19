@@ -109,8 +109,17 @@ export default function HeroSection() {
 
                     {/* CTA — pinned to bottom */}
                     <div className="hero-cta">
-                        <button className="hero-btn-underline">Zjistit více</button>
-                        <a href="/kontakt" onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }} className="hero-btn-arrow">
+                        <button
+                            className="hero-btn-primary"
+                            onClick={() => navigate('/sluzby')}
+                        >
+                            Zjistit více
+                        </button>
+                        <a
+                            href="/kontakt"
+                            onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
+                            className="hero-btn-arrow"
+                        >
                             Kontaktujte nás <span>→</span>
                         </a>
                     </div>
@@ -242,53 +251,82 @@ export default function HeroSection() {
                     left: 0;
                     bottom: 0;
                     display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1.25rem;
                 }
                 @media (max-width: 767px) {
                     .hero-cta {
                         position: static;
                         margin-top: 2rem;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.875rem;
                     }
                 }
 
-                /* ── CTA buttons ────────────────────────────── */
-                .hero-btn-underline,
+                /* ── Primary CTA button ─────────────────────── */
+                .hero-btn-primary {
+                    all: unset;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #fff;
+                    color: #1533e8;
+                    font-family: inherit;
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    padding: 0.7em 1.6em;
+                    border-radius: 999px;
+                    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+                    box-shadow: 0 2px 16px rgba(255,255,255,0.15);
+                }
+                @media (hover: hover) {
+                    .hero-btn-primary:hover {
+                        background: rgba(255,255,255,0.9);
+                        box-shadow: 0 4px 28px rgba(255,255,255,0.3);
+                        transform: translateY(-1px);
+                    }
+                }
+                .hero-btn-primary:active {
+                    transform: translateY(0);
+                }
+                @media (max-width: 767px) {
+                    .hero-btn-primary {
+                        font-size: 0.85rem;
+                    }
+                }
+
+                /* ── Secondary CTA (ghost arrow) ────────────── */
                 .hero-btn-arrow {
                     all: unset;
                     cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.4rem;
                     color: #fff;
                     font-family: inherit;
                     font-weight: 700;
-                    font-size: 0.7rem;
-                    letter-spacing: 0.15em;
+                    font-size: 0.75rem;
+                    letter-spacing: 0.12em;
                     text-transform: uppercase;
-                    width: fit-content;
-                }
-                @media (max-width: 767px) {
-                    .hero-btn-underline,
-                    .hero-btn-arrow {
-                        font-size: 0.85rem;
-                        letter-spacing: 0.12em;
-                    }
-                }
-                .hero-btn-underline,
-                .hero-btn-arrow {
-                    border-bottom: 1px solid rgba(255,255,255,0.3);
+                    border-bottom: 1px solid rgba(255,255,255,0.35);
                     padding-bottom: 2px;
                     transition: border-color 0.2s, text-shadow 0.2s;
                 }
                 @media (hover: hover) {
-                    .hero-btn-underline:hover,
                     .hero-btn-arrow:hover {
                         border-color: rgba(255,255,255,0.9);
                         text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35);
                     }
                 }
-                .hero-btn-arrow {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.4rem;
+                @media (max-width: 767px) {
+                    .hero-btn-arrow {
+                        font-size: 0.85rem;
+                    }
                 }
             `}</style>
         </section>

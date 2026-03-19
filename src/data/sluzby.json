@@ -63,18 +63,5 @@
       "Segmentace sítě a VLAN",
       "Dohled nad dostupností a výkonem"
     ]
-  },
-  {
-    "id": "it-poradenstvi",
-    "title": "IT poradenství",
-    "subtitle": "Strategický pohled na vaše IT",
-    "description": "Pomáháme firmám rozhodovat se o IT strategicky — ne jen hasit požáry. Analyzujeme váš stav, navrhneme plán a provedeme vás změnou.",
-    "details": [
-      "IT audit a analýza stávajícího stavu",
-      "Technologická strategie a roadmapa",
-      "Výběr a implementace nových systémů",
-      "Správa IT projektů",
-      "Nezávislé poradenství bez střetu zájmů"
-    ]
   }
 ]

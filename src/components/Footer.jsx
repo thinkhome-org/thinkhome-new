@@ -1,4 +1,13 @@
+import { useAppNavigate } from "../context/navigate";
+
 export default function Footer() {
+    const navigate = useAppNavigate();
+
+    const navLink = (path, e) => {
+        e.preventDefault();
+        navigate(path);
+    };
+
     return (
         <footer style={{
             fontFamily: "'Manrope Variable', Manrope, sans-serif",
@@ -8,7 +17,7 @@ export default function Footer() {
             <div className="footer-top">
                 {/* Left — logo + tagline */}
                 <div className="footer-brand">
-                    <a href="#" style={{ textDecoration: "none" }}>
+                    <a href="/" onClick={(e) => navLink('/', e)} style={{ textDecoration: "none" }}>
                         <span style={{
                             color: "#fff",
                             fontWeight: 800,
@@ -35,13 +44,14 @@ export default function Footer() {
                 <div className="footer-right">
                     <div className="footer-col">
                         <span className="footer-col-label">Stránky</span>
-                        <a href="#" className="footer-link">Domů</a>
-                        <a href="#sluzby" className="footer-link">Služby</a>
+                        <a href="/" onClick={(e) => navLink('/', e)} className="footer-link">Domů</a>
+                        <a href="/sluzby" onClick={(e) => navLink('/sluzby', e)} className="footer-link">Služby</a>
                     </div>
                     <div className="footer-col">
                         <span className="footer-col-label">Firma</span>
-                        <a href="#o-nas" className="footer-link">O nás</a>
-                        <a href="#kontakt" className="footer-link">Kontakt</a>
+                        <a href="/o-nas" onClick={(e) => navLink('/o-nas', e)} className="footer-link">O nás</a>
+                        <a href="/kontakt" onClick={(e) => navLink('/kontakt', e)} className="footer-link">Kontakt</a>
+                        <a href="/gdpr" onClick={(e) => navLink('/gdpr', e)} className="footer-link">Ochrana osobních údajů</a>
                     </div>
                 </div>
             </div>

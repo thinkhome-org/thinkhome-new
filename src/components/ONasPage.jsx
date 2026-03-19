@@ -63,10 +63,7 @@ export default function ONasPage() {
                         alignSelf: "flex-end",
                         maxWidth: "48ch",
                     }}>
-                        ThinkHome je vaším důvěryhodným partnerem v digitální transformaci, který spojuje
-                        špičkové IT služby pro firmy i domácnosti do uceleného celku. Nabízíme komplexní
-                        řešení od webů a cloudu přes kyberbezpečnost až po umělou inteligenci a chytré
-                        sítě – vše na klíč s důrazem na spolehlivost, úspory a maximální pohodlí.
+                        Jsme vaším důvěryhodným partnerem, který zajišťuje vaši digitální podporu v oblasti informačních technologií. Propojujeme špičkové služby pro firmy i jednotlivce. Nabízíme komplexní řešení od webů a cloudu přes kybernetickou bezpečnost až po umělou inteligenci a počítačové sítě, s důrazem na spolehlivost a spokojenost klienta.
                     </p>
                 </div>
 
@@ -98,12 +95,7 @@ export default function ONasPage() {
                         lineHeight: 1.75,
                         margin: 0,
                     }}>
-                        Poskytujeme end-to-end služby, které pokrývají celý cyklus od návrhu po 24/7
-                        dohled. Pro firmy řešíme správu IT infrastruktury, nasazení Microsoft 365 nebo
-                        Google Workspace, profesionální sítě, Wi-Fi, zálohy a bezpečnostní audity včetně
-                        AI automatizací procesů. Pro domácnosti vytváříme stabilní chytré domy na bázi
-                        Home Assistant s kamerami, automatizací a vzdálenou správou. Každé řešení je
-                        přizpůsobené vašim potřebám, aby šetřilo čas, peníze a minimalizovalo rizika.
+                        Poskytujeme širokou škálu služeb, které pokrývají celý cyklus od návrhu po správu a spolehlivý dohled. Pro firmy zajišťujeme především kvalitní IT infrastrukturu, nastavení Microsoft 365, Google Workspace i jiné, profesionální síťové, či bezpečnostní služby, zálohy, včetně automatizace pomocí AI. Zajistíme vám i chytrou domácnost. Každé řešení je přizpůsobené vašim potřebám, aby šetřilo čas, peníze a minimalizovalo rizika.
                     </p>
                 </div>
 
@@ -125,7 +117,7 @@ export default function ONasPage() {
                             textTransform: "uppercase",
                             color: "#7a8fc4",
                             margin: "0 0 0.75rem",
-                        }}>Proč ThinkHome</p>
+                        }}>Proč &lt;thinkhome&gt;</p>
                         <p style={{
                             fontSize: "clamp(0.9rem, 1.4vw, 1rem)",
                             fontWeight: 400,
@@ -146,12 +138,7 @@ export default function ONasPage() {
                         margin: 0,
                         flex: 1,
                     }}>
-                        Zaměřujeme se spíše na dlouhodobé partnerství místo jednorázových zakázek –
-                        klienti oceňují rychlou reakci, transparentní procesy a technologie jako Terraform,
-                        Vercel nebo pokročilé AI chatboti. Ať už potřebujete moderní web, POS systém pro
-                        obchod, penetrační testy nebo profesionální hardware servis, doručíme vám výsledky,
-                        které přímo zvyšují vaši efektivitu. Naše cena odpovídá tržnímu mediánu, vždy
-                        s jasnou hodnotou navíc.
+                        Nabízíme jak dlouhodobé partnerství, tak jednorázové zakázky. Určitě oceníte rychlou reakci, transparentní komunikaci a technologie jako Vercel nebo pokročilé AI služby. Ať už potřebujete moderní web, POS systém pro obchod, penetrační testy nebo profesionální hardware servis, vše jsme schopní udělat za vás. Naše cena odpovídá tržnímu mediánu, vždy s přidanou hodnotou.
                     </p>
                 </div>
 

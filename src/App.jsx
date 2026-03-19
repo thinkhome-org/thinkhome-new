@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection';
 import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
 import ONasPage from './components/ONasPage';
+import GdprPage from './components/GdprPage';
 import sluzby from './data/sluzby.json';
 
 const SWEEP = 320;
@@ -58,6 +59,7 @@ export default function App() {
                     <Route path="/sluzby/:id" element={<ServiceDetailWrapper />} />
                     <Route path="/o-nas" element={<ONasPage />} />
                     <Route path="/kontakt" element={<KontaktPage />} />
+                    <Route path="/gdpr" element={<GdprPage />} />
                 </Routes>
             </div>
             <div style={curtainStyle} />
