@@ -96,7 +96,7 @@ export default function GdprPage() {
                         lineHeight: 1.6,
                     }}>
                         Zásady zpracování osobních údajů v souladu s nařízením GDPR (EU) 2016/679.<br />
-                        Poslední aktualizace: {new Date().toLocaleDateString("cs-CZ", { day: "numeric", month: "long", year: "numeric" })}
+                        Poslední aktualizace: 19. března 2026
                     </p>
                 </div>
 
