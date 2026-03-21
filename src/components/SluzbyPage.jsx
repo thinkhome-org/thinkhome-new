@@ -129,6 +129,11 @@ export function ServiceDetail({ service }) {
                     .sd-left {
                         position: static;
                     }
+                    .sd-left p {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
+                    }
                 }
             `}</style>
             <Footer />
@@ -210,6 +215,16 @@ export default function SluzbyPage() {
                     .sluzba-block {
                         padding: 1.75rem 0;
                         min-height: 180px;
+                    }
+                    .sluzba-subtitle {
+                        font-size: 0.95rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .sluzba-desc {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
                     }
                 }
 

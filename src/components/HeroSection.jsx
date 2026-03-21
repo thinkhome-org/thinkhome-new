@@ -4,132 +4,144 @@ import Footer from "./Footer";
 import { useAppNavigate } from "../context/navigate";
 
 const isSafari =
-    typeof CSS !== "undefined" &&
-    CSS.supports("-webkit-appearance", "none") &&
-    !navigator.userAgent.includes("Chrome") &&
-    !navigator.userAgent.includes("Chromium");
+  typeof CSS !== "undefined" &&
+  CSS.supports("-webkit-appearance", "none") &&
+  !navigator.userAgent.includes("Chrome") &&
+  !navigator.userAgent.includes("Chromium");
 
 export default function HeroSection() {
-    const navigate = useAppNavigate();
+  const navigate = useAppNavigate();
 
-    return (
-        <>
-        <section
+  return (
+    <>
+      <section
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100vh",
+          minHeight: "560px",
+          overflow: "hidden",
+          background: "#1533e8",
+          fontFamily: "'Manrope Variable', Manrope, sans-serif",
+        }}
+        className="hero-section"
+      >
+        <Navbar />
+
+        {/* Prism — desktop, non-Safari */}
+        {!isSafari && (
+          <div className="prism-container prism-desktop">
+            <Prism
+              animationType="rotate"
+              transparent={true}
+              hueShift={0}
+              colorFrequency={0.3}
+              glow={0.5}
+              bloom={1.5}
+              noise={0.0}
+              scale={1.7}
+              timeScale={0.35}
+            />
+          </div>
+        )}
+
+        {/* Prism — desktop, Safari/WebKit only (reduced glow) */}
+        {isSafari && (
+          <div className="prism-container prism-desktop">
+            <Prism
+              animationType="rotate"
+              transparent={true}
+              hueShift={0}
+              colorFrequency={0.3}
+              glow={0.4}
+              bloom={0.7}
+              noise={0.0}
+              scale={1.7}
+              timeScale={0.35}
+            />
+          </div>
+        )}
+
+        {/* Prism — mobile only */}
+        <div className="prism-container prism-mobile">
+          <Prism
+            animationType="rotate"
+            transparent={true}
+            hueShift={0}
+            colorFrequency={0.3}
+            glow={0.4}
+            bloom={1.0}
+            noise={0.0}
+            scale={1.2}
+            timeScale={0.35}
+          />
+        </div>
+
+        {/* Glass panel */}
+        <div className="hero-panel">
+          {/* Glass blur layer */}
+          <div
             style={{
-                position: "relative",
-                width: "100%",
-                height: "100vh",
-                minHeight: "560px",
-                overflow: "hidden",
-                background: "#1533e8",
-                fontFamily: "'Manrope Variable', Manrope, sans-serif",
+              position: "absolute",
+              inset: 0,
+              backdropFilter: "blur(48px) saturate(1.1)",
+              WebkitBackdropFilter: "blur(48px) saturate(1.1)",
+              background: "rgba(10, 20, 160, 0.12)",
             }}
-        >
-            <Navbar />
+          />
 
-            {/* Prism — desktop, non-Safari */}
-            {!isSafari && (
-                <div className="prism-container prism-desktop">
-                    <Prism
-                        animationType="rotate"
-                        transparent={true}
-                        hueShift={0}
-                        colorFrequency={0.3}
-                        glow={0.5}
-                        bloom={1.5}
-                        noise={0.0}
-                        scale={1.7}
-                        timeScale={0.35}
-                    />
-                </div>
-            )}
+          {/* Content layer */}
+          <div className="hero-content">
+            {/* Vertically centred text block */}
+            <div className="hero-text-wrapper">
+              <div>
+                <h1 className="hero-h1">
+                  Kompletní IT
+                  <br />
+                  <span style={{ opacity: 0.65 }}>&lt; &gt;</span> pod jednou střechou.
+                </h1>
 
-            {/* Prism — desktop, Safari/WebKit only (reduced glow) */}
-            {isSafari && (
-                <div className="prism-container prism-desktop">
-                    <Prism
-                        animationType="rotate"
-                        transparent={true}
-                        hueShift={0}
-                        colorFrequency={0.3}
-                        glow={0.4}
-                        bloom={0.7}
-                        noise={0.0}
-                        scale={1.7}
-                        timeScale={0.35}
-                    />
-                </div>
-            )}
-
-            {/* Prism — mobile only */}
-            <div className="prism-container prism-mobile">
-                <Prism
-                    animationType="rotate"
-                    transparent={true}
-                    hueShift={0}
-                    colorFrequency={0.3}
-                    glow={0.4}
-                    bloom={1.0}
-                    noise={0.0}
-                    scale={1.2}
-                    timeScale={0.35}
-                />
+                <p className="hero-p">
+                  Zjednodušujeme IT tak, aby se firmy nenechaly nachytat a nemusely řešit
+                  několik dodavatelů zároveň. Věnujte se byznysu, IT nechte na nás.
+                </p>
+              </div>
             </div>
 
-            {/* Glass panel */}
-            <div className="hero-panel">
-                {/* Glass blur layer */}
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        backdropFilter: "blur(48px) saturate(1.1)",
-                        WebkitBackdropFilter: "blur(48px) saturate(1.1)",
-                        background: "rgba(10, 20, 160, 0.12)",
-                    }}
-                />
+          </div>
+        </div>
 
-                {/* Content layer */}
-                <div className="hero-content">
-                    {/* Vertically centred text block */}
-                    <div className="hero-text-wrapper">
-                        <div>
-                            <h1 className="hero-h1">
-                                Kompletní IT
-                                <br />
-                                <span style={{ opacity: 0.65 }}>&lt; &gt;</span> pod jednou střechou.
-                            </h1>
+        {/* CTA — pinned to bottom of section */}
+        <div className="hero-cta">
+          <button
+            className="hero-btn-primary"
+            onClick={() => navigate('/sluzby')}
+            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
+            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
+          >
+            Zjistit více
+          </button>
+          <a
+            href="/kontakt"
+            onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
+            className="hero-btn-arrow"
+          >
+            Kontaktujte nás <span>→</span>
+          </a>
+        </div>
 
-                            <p className="hero-p">
-                                Zjednodušujeme IT tak, aby se firmy nenechaly nachytat a nemusely řešit
-                                několik dodavatelů zároveň. Věnujte se byznysu, IT nechte na nás.
-                            </p>
-                        </div>
-                    </div>
+        <style>{`
+                /* ── Section — mobile flex column ──────────── */
+                @media (max-width: 767px) {
+                    .hero-section {
+                        display: flex;
+                        flex-direction: column;
+                        overflow: visible;
+                        height: auto;
+                        min-height: 100dvh;
+                    }
+                }
 
-                </div>
-            </div>
-
-            {/* CTA — pinned to bottom of section */}
-            <div className="hero-cta">
-                <button
-                    className="hero-btn-primary"
-                    onClick={() => navigate('/sluzby')}
-                    onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
-                >
-                    Zjistit více
-                </button>
-                <a
-                    href="/kontakt"
-                    onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
-                    className="hero-btn-arrow"
-                >
-                    Kontaktujte nás <span>→</span>
-                </a>
-            </div>
-
-            <style>{`
                 /* ── Prism position ─────────────────────────── */
                 .prism-container {
                     position: absolute;
@@ -243,7 +255,9 @@ export default function HeroSection() {
                 }
                 @media (max-width: 767px) {
                     .hero-p {
-                        font-size: 0.9rem;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
                         max-width: 100%;
                     }
                 }
@@ -261,8 +275,9 @@ export default function HeroSection() {
                 }
                 @media (max-width: 767px) {
                     .hero-cta {
-                        left: clamp(1.5rem, 6vw, 3rem);
-                        bottom: clamp(2.5rem, 8vw, 4rem);
+                        position: static;
+                        margin-top: auto;
+                        padding: 0 clamp(1.5rem, 6vw, 3rem) clamp(4rem, 12vw, 6rem);
                         flex-wrap: wrap;
                         gap: 1rem;
                     }
@@ -321,8 +336,8 @@ export default function HeroSection() {
                     }
                 }
             `}</style>
-        </section>
-        <Footer />
-        </>
-    );
+      </section>
+      <Footer />
+    </>
+  );
 }
