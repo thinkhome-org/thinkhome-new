@@ -138,6 +138,16 @@ export default function Footer() {
                     .footer-right {
                         gap: 2.5rem;
                     }
+                    .footer-brand p {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .footer-link {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: rgba(255,255,255,0.9);
+                    }
                 }
             `}</style>
         </footer>
