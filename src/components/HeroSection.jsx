@@ -112,6 +112,8 @@ export default function HeroSection() {
                         <button
                             className="hero-btn-primary"
                             onClick={() => navigate('/sluzby')}
+                            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
+                            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
                         >
                             Zjistit více
                         </button>
@@ -281,18 +283,7 @@ export default function HeroSection() {
                     text-transform: uppercase;
                     padding: 0.7em 1.6em;
                     border-radius: 999px;
-                    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-                    box-shadow: 0 2px 16px rgba(255,255,255,0.15);
-                }
-                @media (hover: hover) {
-                    .hero-btn-primary:hover {
-                        background: rgba(255,255,255,0.9);
-                        box-shadow: 0 4px 28px rgba(255,255,255,0.3);
-                        transform: translateY(-1px);
-                    }
-                }
-                .hero-btn-primary:active {
-                    transform: translateY(0);
+                    transition: box-shadow 0.15s;
                 }
                 @media (max-width: 767px) {
                     .hero-btn-primary {
