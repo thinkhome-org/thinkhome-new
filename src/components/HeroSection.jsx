@@ -107,25 +107,26 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    {/* CTA — pinned to bottom */}
-                    <div className="hero-cta">
-                        <button
-                            className="hero-btn-primary"
-                            onClick={() => navigate('/sluzby')}
-                            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
-                            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
-                        >
-                            Zjistit více
-                        </button>
-                        <a
-                            href="/kontakt"
-                            onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
-                            className="hero-btn-arrow"
-                        >
-                            Kontaktujte nás <span>→</span>
-                        </a>
-                    </div>
                 </div>
+            </div>
+
+            {/* CTA — pinned to bottom of section */}
+            <div className="hero-cta">
+                <button
+                    className="hero-btn-primary"
+                    onClick={() => navigate('/sluzby')}
+                    onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
+                >
+                    Zjistit více
+                </button>
+                <a
+                    href="/kontakt"
+                    onClick={(e) => { e.preventDefault(); navigate('/kontakt'); }}
+                    className="hero-btn-arrow"
+                >
+                    Kontaktujte nás <span>→</span>
+                </a>
             </div>
 
             <style>{`
@@ -250,8 +251,8 @@ export default function HeroSection() {
                 /* ── CTA block ──────────────────────────────── */
                 .hero-cta {
                     position: absolute;
-                    left: 0;
-                    bottom: 0;
+                    left: clamp(2rem, 6vw, 7rem);
+                    bottom: clamp(2rem, 6vw, 7rem);
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -259,11 +260,10 @@ export default function HeroSection() {
                 }
                 @media (max-width: 767px) {
                     .hero-cta {
-                        position: static;
-                        margin-top: 2rem;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        gap: 0.875rem;
+                        left: clamp(1.5rem, 6vw, 3rem);
+                        bottom: clamp(2.5rem, 8vw, 4rem);
+                        flex-wrap: wrap;
+                        gap: 1rem;
                     }
                 }
 
