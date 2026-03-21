@@ -257,6 +257,7 @@ export default function HeroSection() {
                     flex-direction: row;
                     align-items: center;
                     gap: 1.25rem;
+                    z-index: 2;
                 }
                 @media (max-width: 767px) {
                     .hero-cta {
