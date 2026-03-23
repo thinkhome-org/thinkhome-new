@@ -84,7 +84,7 @@ export default function KontaktPage() {
             }}>
                 {/* Header */}
                 <div style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
-                    <p style={{
+                    <p className="kontakt-header-label" style={{
                         fontSize: "0.7rem",
                         fontWeight: 700,
                         letterSpacing: "0.18em",
@@ -165,7 +165,7 @@ export default function KontaktPage() {
                     <LegalItem label="IČO" value="23893591" />
                     <LegalItem label="DIČ" value="CZ23893591" />
                     <LegalItem label="Účet" value="363677109/0300" />
-                    <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>
+                    <span className="kontakt-legal-note" style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>
                         Spisová značka C 434666 vedená u Městského soudu v Praze
                     </span>
                 </div>
@@ -251,6 +251,29 @@ export default function KontaktPage() {
                     font-weight: 400;
                     color: rgba(255,255,255,0.7);
                     line-height: 1.7;
+                }
+
+                @media (max-width: 767px) {
+                    .kontakt-header-label {
+                        font-size: 0.78rem !important;
+                        color: rgba(255,255,255,0.9) !important;
+                    }
+                    .kontakt-label {
+                        font-size: 0.78rem;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .kontakt-note {
+                        font-size: 0.88rem;
+                        color: rgba(255,255,255,0.9);
+                    }
+                    .kontakt-legal {
+                        font-size: 0.82rem;
+                        color: rgba(255,255,255,0.85);
+                    }
+                    .kontakt-legal-note {
+                        font-size: 0.82rem !important;
+                        color: rgba(255,255,255,0.85) !important;
+                    }
                 }
             `}</style>
             <Footer />

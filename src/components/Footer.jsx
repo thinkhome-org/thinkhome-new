@@ -139,14 +139,18 @@ export default function Footer() {
                         gap: 2.5rem;
                     }
                     .footer-brand p {
-                        font-size: 1rem;
-                        font-weight: 500;
-                        color: rgba(255,255,255,0.9);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #fff;
                     }
                     .footer-link {
-                        font-size: 1rem;
+                        font-size: 1.1rem;
                         font-weight: 500;
-                        color: rgba(255,255,255,0.9);
+                        color: #fff;
+                    }
+                    .footer-col-label {
+                        font-size: 0.82rem;
+                        color: #fff;
                     }
                 }
             `}</style>

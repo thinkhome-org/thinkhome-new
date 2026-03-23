@@ -8,11 +8,11 @@ export default defineConfig({
     server: {
         port: 3000,
         host: true,
-        allowedHosts: ["all", "localhost.yan5q.org"],
+        allowedHosts: ["all", "localhost.yan5q.org", "dev.zer0.cz"],
     },
     preview: {
         port: 3000,
         host: true,
-        allowedHosts: ["all", "localhost.yan5q.org"],
+        allowedHosts: ["all", "localhost.yan5q.org", "dev.zer0.cz"],
     },
 });

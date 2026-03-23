@@ -85,7 +85,7 @@ export default function GdprPage() {
                 <div style={{ width: "100%", height: "1px", background: "#e4e9f7", marginBottom: "clamp(3rem, 6vw, 5rem)" }} />
 
                 {/* 1. Správce */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>1. Správce osobních údajů</p>
                     <div>
                         <p style={pStyle}>Správcem vašich osobních údajů je:</p>
@@ -104,7 +104,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 2. Jaké údaje */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>2. Jaké osobní údaje zpracováváme</p>
                     <div>
                         <p style={pStyle}>V závislosti na způsobu, jakým nás kontaktujete nebo využíváte naše služby, můžeme zpracovávat tyto kategorie osobních údajů:</p>
@@ -122,7 +122,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 3. Účel */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>3. Účel a právní základ zpracování</p>
                     <div>
                         <p style={pStyle}>Vaše osobní údaje zpracováváme na základě těchto právních titulů:</p>
@@ -138,7 +138,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 4. Doba uchování */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>4. Doba uchování osobních údajů</p>
                     <div>
                         <p style={pStyle}>Osobní údaje uchováváme pouze po dobu nezbytně nutnou pro splnění účelu, pro který byly shromážděny:</p>
@@ -154,7 +154,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 5. Příjemci */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>5. Příjemci osobních údajů</p>
                     <div>
                         <p style={pStyle}>
@@ -169,7 +169,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 6. Vaše práva */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>6. Vaše práva</p>
                     <div>
                         <p style={pStyle}>Jako subjekt údajů máte vůči nám tato práva:</p>
@@ -192,7 +192,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 7. Cookies */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>7. Cookies</p>
                     <div>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
@@ -204,7 +204,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 8. Zabezpečení */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>8. Zabezpečení osobních údajů</p>
                     <div>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
@@ -216,7 +216,7 @@ export default function GdprPage() {
                 <div style={dividerStyle} />
 
                 {/* 9. Změny */}
-                <div style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
+                <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>9. Změny těchto zásad</p>
                     <div>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
@@ -256,6 +256,15 @@ export default function GdprPage() {
                     </a>
                 </div>
             </main>
+
+            <style>{`
+                @media (max-width: 767px) {
+                    .gdpr-section {
+                        grid-template-columns: 1fr !important;
+                        gap: 0.75rem !important;
+                    }
+                }
+            `}</style>
 
             <div style={{ background: BLUE }}>
                 <Footer />

@@ -275,9 +275,9 @@ export default function HeroSection() {
                 }
                 @media (max-width: 767px) {
                     .hero-cta {
-                        position: static;
-                        margin-top: auto;
-                        padding: 0 clamp(1.5rem, 6vw, 3rem) clamp(4rem, 12vw, 6rem);
+                        position: absolute;
+                        left: clamp(1.5rem, 6vw, 3rem);
+                        bottom: 22dvh;
                         flex-wrap: wrap;
                         gap: 1rem;
                     }

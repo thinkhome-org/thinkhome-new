@@ -28,6 +28,7 @@ export function ServiceDetail({ service }) {
                 {/* Back button */}
                 <button
                     onClick={goBack}
+                    className="sd-back-btn"
                     style={{
                         all: "unset",
                         cursor: "pointer",
@@ -92,7 +93,7 @@ export function ServiceDetail({ service }) {
                                     fontWeight: 500,
                                     color: "rgba(255,255,255,0.9)",
                                 }}>
-                                    <span style={{
+                                    <span className="sd-num" style={{
                                         fontSize: "0.65rem",
                                         fontWeight: 600,
                                         letterSpacing: "0.1em",
@@ -130,9 +131,9 @@ export function ServiceDetail({ service }) {
                         position: static;
                     }
                     .sd-left p {
-                        font-size: 1rem;
-                        font-weight: 500;
-                        color: rgba(255,255,255,0.9);
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #fff;
                     }
                 }
             `}</style>
@@ -217,14 +218,7 @@ export default function SluzbyPage() {
                         min-height: 180px;
                     }
                     .sluzba-subtitle {
-                        font-size: 0.95rem;
-                        font-weight: 500;
-                        color: rgba(255,255,255,0.9);
-                    }
-                    .sluzba-desc {
-                        font-size: 0.9rem;
-                        font-weight: 500;
-                        color: rgba(255,255,255,0.9);
+                        display: none;
                     }
                 }
 
@@ -304,9 +298,21 @@ export default function SluzbyPage() {
                     }
                 }
                 @media (max-width: 767px) {
+                    .sluzba-desc-wrap {
+                        display: none;
+                    }
                     .sluzba-arrow {
                         bottom: 1.75rem;
                         right: 0;
+                        color: rgba(255,255,255,0.6);
+                    }
+                    .sd-back-btn {
+                        font-size: 0.82rem !important;
+                        color: rgba(255,255,255,0.8) !important;
+                    }
+                    .sd-num {
+                        font-size: 0.72rem !important;
+                        color: rgba(255,255,255,0.65) !important;
                     }
                 }
             `}</style>
