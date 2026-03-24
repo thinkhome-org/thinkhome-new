@@ -10,8 +10,14 @@ export function ServiceDetail({ service }) {
 
     useEffect(() => {
         document.title = `${service.title} – thinkhome`;
-        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
-    }, [service.title]);
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+        canonical.href = `https://thinkhome.cz/sluzby/${service.id}`;
+        return () => {
+            document.title = "thinkhome – Kompletní IT pod jednou střechou";
+            canonical.href = "https://thinkhome.cz/";
+        };
+    }, [service.title, service.id]);
 
     return (
         <div style={{
@@ -147,7 +153,13 @@ export default function SluzbyPage() {
 
     useEffect(() => {
         document.title = "Služby – thinkhome";
-        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+        canonical.href = "https://thinkhome.cz/sluzby";
+        return () => {
+            document.title = "thinkhome – Kompletní IT pod jednou střechou";
+            canonical.href = "https://thinkhome.cz/";
+        };
     }, []);
 
     return (

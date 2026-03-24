@@ -1,3 +1,10 @@
 {
+  "redirects": [
+    { "source": "/about",    "destination": "/o-nas",   "permanent": true },
+    { "source": "/services", "destination": "/sluzby",  "permanent": true },
+    { "source": "/contakt",  "destination": "/kontakt", "permanent": true },
+    { "source": "/contact",  "destination": "/kontakt", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
+

@@ -66,7 +66,13 @@ function LegalItem({ label, value }) {
 export default function KontaktPage() {
     useEffect(() => {
         document.title = "Kontakt – thinkhome";
-        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+        canonical.href = "https://thinkhome.cz/kontakt";
+        return () => {
+            document.title = "thinkhome – Kompletní IT pod jednou střechou";
+            canonical.href = "https://thinkhome.cz/";
+        };
     }, []);
 
     return (
