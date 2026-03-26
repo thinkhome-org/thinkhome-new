@@ -88,28 +88,65 @@ export function ServiceDetail({ service }) {
                     {/* Right — details list */}
                     <div className="sd-right">
                         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                            {service.details.map((item, i) => (
-                                <li key={i} style={{
-                                    display: "flex",
-                                    alignItems: "baseline",
-                                    gap: "1.25rem",
-                                    padding: "1.1rem 0",
-                                    borderBottom: "1px solid rgba(255,255,255,0.07)",
-                                    fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
-                                    fontWeight: 500,
-                                    color: "rgba(255,255,255,0.9)",
-                                }}>
-                                    <span className="sd-num" style={{
-                                        fontSize: "0.65rem",
-                                        fontWeight: 600,
-                                        letterSpacing: "0.1em",
-                                        color: "rgba(255,255,255,0.3)",
-                                        flexShrink: 0,
-                                        fontVariantNumeric: "tabular-nums",
-                                    }}>0{i + 1}</span>
-                                    {item}
-                                </li>
-                            ))}
+                            {service.detailsFull
+                                ? service.detailsFull.map((item, i) => (
+                                    <li key={i} style={{
+                                        display: "flex",
+                                        alignItems: "baseline",
+                                        gap: "1.25rem",
+                                        padding: "1.6rem 0",
+                                        borderBottom: "1px solid rgba(255,255,255,0.07)",
+                                    }}>
+                                        <span className="sd-num" style={{
+                                            fontSize: "0.65rem",
+                                            fontWeight: 600,
+                                            letterSpacing: "0.1em",
+                                            color: "rgba(255,255,255,0.3)",
+                                            flexShrink: 0,
+                                            fontVariantNumeric: "tabular-nums",
+                                            paddingTop: "0.2rem",
+                                        }}>0{i + 1}</span>
+                                        <div>
+                                            <p style={{
+                                                fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
+                                                fontWeight: 600,
+                                                color: "rgba(255,255,255,0.95)",
+                                                margin: "0 0 0.45rem",
+                                                lineHeight: 1.4,
+                                            }}>{item.title}</p>
+                                            <p style={{
+                                                fontSize: "clamp(0.82rem, 1.1vw, 0.92rem)",
+                                                fontWeight: 400,
+                                                color: "rgba(255,255,255,0.55)",
+                                                margin: 0,
+                                                lineHeight: 1.7,
+                                            }}>{item.body}</p>
+                                        </div>
+                                    </li>
+                                ))
+                                : service.details.map((item, i) => (
+                                    <li key={i} style={{
+                                        display: "flex",
+                                        alignItems: "baseline",
+                                        gap: "1.25rem",
+                                        padding: "1.1rem 0",
+                                        borderBottom: "1px solid rgba(255,255,255,0.07)",
+                                        fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
+                                        fontWeight: 500,
+                                        color: "rgba(255,255,255,0.9)",
+                                    }}>
+                                        <span className="sd-num" style={{
+                                            fontSize: "0.65rem",
+                                            fontWeight: 600,
+                                            letterSpacing: "0.1em",
+                                            color: "rgba(255,255,255,0.3)",
+                                            flexShrink: 0,
+                                            fontVariantNumeric: "tabular-nums",
+                                        }}>0{i + 1}</span>
+                                        {item}
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

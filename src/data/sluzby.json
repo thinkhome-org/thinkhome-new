@@ -13,6 +13,59 @@
     ]
   },
   {
+    "id": "anonymizace-osob",
+    "title": "Anonymizace osob",
+    "subtitle": "Zůstaňte neviditelní a nestopovatelní",
+    "description": "Pomáháme jednotlivcům i organizacím chránit se před cíleným sledováním, sběrem dat a neoprávněným odposlechem. Naše služby vycházejí z principů operativní bezpečnosti (OPSEC) a reálných hrozeb v digitálním i fyzickém prostředí.",
+    "details": [
+      "Bezpečnostní audit a minimalizace digitální stopy",
+      "Anonymní komunikace a šifrovaná infrastruktura",
+      "Ochrana proti sledování a profilování",
+      "Protiodposlechová opatření a kontrola prostředí (TSCM)",
+      "Anonymizace obrazových záznamů a fyzických identifikátorů",
+      "Právní a regulatorní rámec (GDPR a ochrana soukromí)"
+    ],
+    "detailsFull": [
+      {
+        "title": "Bezpečnostní audit a minimalizace digitální stopy",
+        "body": "Provádíme hloubkový rozbor vaší digitální přítomnosti (OSINT footprint), identifikujeme slabá místa a navrhujeme konkrétní kroky k jejich eliminaci. Součástí je i odstranění dohledatelných vazeb a snížení identifikovatelnosti napříč systémy."
+      },
+      {
+        "title": "Anonymní komunikace a šifrovaná infrastruktura",
+        "body": "Navrhujeme a implementujeme komunikační kanály odolné vůči odposlechu a metadatové analýze. Zaměřujeme se na end-to-end šifrování, anonymizační vrstvy a oddělení identit."
+      },
+      {
+        "title": "Ochrana proti sledování a profilování",
+        "body": "Detekujeme a eliminujeme mechanismy sledování (tracking, fingerprinting, behaviorální analýza). Implementujeme opatření pro minimalizaci profilovatelnosti napříč zařízeními a službami."
+      },
+      {
+        "title": "Protiodposlechová opatření a kontrola prostředí (TSCM)",
+        "body": "Provádíme technické kontroly prostor a zařízení za účelem detekce odposlechů, skrytých kamer a kompromitovaných prvků infrastruktury. Součástí je návrh bezpečnostního režimu pro citlivé schůzky a komunikaci."
+      },
+      {
+        "title": "Anonymizace obrazových záznamů a fyzických identifikátorů",
+        "body": "Zajišťujeme automatizované i cílené anonymizační procesy (tváře, SPZ, biometrické znaky) v souladu s právními požadavky a ochranou identity."
+      },
+      {
+        "title": "Právní a regulatorní rámec (GDPR a ochrana soukromí)",
+        "body": "Zajišťujeme, aby implementovaná opatření byla v souladu s právními předpisy, zejména v oblasti ochrany osobních údajů, a zároveň neoslabovala reálnou bezpečnost klienta."
+      }
+    ]
+  },
+  {
+    "id": "ai-reseni",
+    "title": "AI řešení",
+    "subtitle": "Umělá inteligence pro váš byznys",
+    "description": "Navrhujeme a implementujeme AI nástroje na míru — od automatizace opakujících se úkolů přes jazykové modely až po počítačové vidění. Umělá inteligence dostupná bez nutnosti vlastního výzkumného týmu.",
+    "details": [
+      "Implementace LLM a chatbotů pro zákaznickou podporu",
+      "Automatizace dokumentových procesů (OCR, extrakce dat)",
+      "Počítačové vidění — detekce, klasifikace, anonymizace",
+      "Integrace AI do stávajících firemních systémů",
+      "Pilotní projekty a proof-of-concept v krátkém čase"
+    ]
+  },
+  {
     "id": "kyberneticka-bezpecnost",
     "title": "Kybernetická bezpečnost",
     "subtitle": "Ochrana před moderními hrozbami",
