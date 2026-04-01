@@ -79,17 +79,6 @@ export default function HeroSection() {
 
         {/* Glass panel */}
         <div className="hero-panel">
-          {/* Glass blur layer */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              backdropFilter: "blur(48px) saturate(1.1)",
-              WebkitBackdropFilter: "blur(48px) saturate(1.1)",
-              background: "rgba(10, 20, 160, 0.12)",
-            }}
-          />
-
           {/* Content layer */}
           <div className="hero-content">
             {/* Vertically centred text block */}
@@ -148,8 +137,6 @@ export default function HeroSection() {
                 }
                 .prism-desktop {
                     inset: 0;
-                    left: 35%;
-                    top: 0%;
                 }
                 .prism-mobile {
                     display: none;
@@ -191,9 +178,7 @@ export default function HeroSection() {
                         padding-bottom: 2rem;
                         max-height: 52%;
                     }
-                    .hero-panel > div:first-child {
-                        display: none;
-                    }
+
                 }
 
                 /* ── Inner content layer ────────────────────── */

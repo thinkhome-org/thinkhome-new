@@ -7,6 +7,7 @@ import { useAppNavigate } from "../context/navigate";
 export function ServiceDetail({ service }) {
     const navigate = useAppNavigate();
     const goBack = () => navigate('/sluzby');
+    const goContact = () => navigate('/kontakt');
 
     useEffect(() => {
         document.title = `${service.title} – thinkhome`;
@@ -152,6 +153,24 @@ export function ServiceDetail({ service }) {
                 </div>
             </div>
 
+            {/* CTA — copy left, button right */}
+            <div className="sd-cta-wrap">
+                <div className="sd-cta-copy">
+                    <h2 className="sd-cta-headline">Máte zájem o tuto službu nebo chcete vědět víc?</h2>
+                    <p className="sd-cta-sub">Napište nám — rádi projdeme vaši situaci a navrhneme další kroky.</p>
+                </div>
+                <button
+                    type="button"
+                    onClick={goContact}
+                    className="sd-cta-btn"
+                >
+                    Kontaktujte nás
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
             <style>{`
                 .sd-grid {
                     display: grid;
@@ -177,6 +196,70 @@ export function ServiceDetail({ service }) {
                         font-size: 1.2rem;
                         font-weight: 600;
                         color: #fff;
+                    }
+                }
+                .sd-cta-wrap {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: clamp(1.5rem, 4vw, 3rem);
+                    padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 8vw, 7rem);
+                    border-top: 1px solid rgba(255,255,255,0.1);
+                }
+                .sd-cta-copy {
+                    flex: 1;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    text-align: left;
+                }
+                .sd-cta-headline {
+                    font-size: clamp(1.15rem, 2vw, 1.45rem);
+                    font-weight: 800;
+                    color: #fff;
+                    margin: 0;
+                    letter-spacing: -0.02em;
+                    line-height: 1.25;
+                }
+                .sd-cta-sub {
+                    font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+                    font-weight: 400;
+                    color: rgba(255,255,255,0.55);
+                    margin: 0;
+                    line-height: 1.55;
+                    max-width: 42ch;
+                }
+                .sd-cta-btn {
+                    all: unset;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.6rem;
+                    padding: 0.85rem 1.75rem;
+                    background: #fff;
+                    color: #1533e8;
+                    font-family: 'Manrope Variable', Manrope, sans-serif;
+                    font-size: 0.88rem;
+                    font-weight: 700;
+                    letter-spacing: 0.03em;
+                    border-radius: 999px;
+                    white-space: nowrap;
+                    transition: background 0.15s, color 0.15s, transform 0.15s;
+                    flex-shrink: 0;
+                }
+                .sd-cta-btn:hover {
+                    background: rgba(255,255,255,0.88);
+                    transform: translateY(-1px);
+                }
+                @media (max-width: 600px) {
+                    .sd-cta-wrap {
+                        flex-direction: column;
+                        align-items: stretch;
+                    }
+                    .sd-cta-sub {
+                        max-width: none;
                     }
                 }
             `}</style>
