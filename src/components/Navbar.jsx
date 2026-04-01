@@ -46,6 +46,8 @@ export default function Navbar({ light = false }) {
                     padding: "0 clamp(1.25rem, 6vw, 7rem)",
                     height: "68px",
                     fontFamily: "'Manrope Variable', Manrope, sans-serif",
+                    userSelect: "none",
+                    WebkitUserSelect: "none",
                 }}
             >
                 {/* Logo */}
@@ -176,6 +178,8 @@ export default function Navbar({ light = false }) {
                     transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     fontFamily: "'Manrope Variable', Manrope, sans-serif",
                     overflow: "hidden",
+                    userSelect: "none",
+                    WebkitUserSelect: "none",
                 }}
                 className="nav-drawer"
             >
