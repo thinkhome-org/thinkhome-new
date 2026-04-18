@@ -8,6 +8,7 @@ import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
 import ONasPage from './components/ONasPage';
 import GdprPage from './components/GdprPage';
+import WebMcpBridge from './components/WebMcpBridge';
 import sluzby from './data/sluzby.json';
 
 const SWEEP = 320;
@@ -62,6 +63,7 @@ export default function App() {
                     <Route path="/gdpr" element={<GdprPage />} />
                 </Routes>
             </div>
+            <WebMcpBridge navigate={navigate} services={sluzby} />
             <div style={curtainStyle} />
             <SpeedInsights />
             <Analytics />
