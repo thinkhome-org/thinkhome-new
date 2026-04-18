@@ -1,0 +1,12 @@
+/
+  Link: </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"
+  Link: </for-agents.md>; rel="alternate"; type="text/markdown"
+
+/for-agents.md
+  Content-Type: text/markdown; charset=utf-8
+
+/agent-services.md
+  Content-Type: text/markdown; charset=utf-8
+
+/.well-known/agent-skills/*/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
