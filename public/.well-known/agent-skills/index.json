@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "Navigate the public ThinkHome website and choose the correct public page.",
+      "url": "/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:af7c59f77f5894a694e74f05a317b3d5a42f65f497a9b39491dee5866b2f5ee9"
+    },
+    {
+      "name": "service-catalog",
+      "type": "skill-md",
+      "description": "Read a markdown summary of ThinkHome public services and service detail routes.",
+      "url": "/.well-known/agent-skills/service-catalog/SKILL.md",
+      "digest": "sha256:f8ba8fa97c56e90a3392d400a6d833d6e63ceb9cc8835e17210dd18dc1ee4700"
+    },
+    {
+      "name": "contact-details",
+      "type": "skill-md",
+      "description": "Read the public ThinkHome contact and legal details in markdown form.",
+      "url": "/.well-known/agent-skills/contact-details/SKILL.md",
+      "digest": "sha256:b366101b15d5b34459b184a9825b655068281ad7e7be009dbe6f37acb5c88081"
+    }
+  ]
+}

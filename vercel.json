@@ -1,4 +1,46 @@
 {
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\""
+        },
+        {
+          "key": "Link",
+          "value": "</for-agents.md>; rel=\"alternate\"; type=\"text/markdown\""
+        }
+      ]
+    },
+    {
+      "source": "/for-agents.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/agent-services.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/agent-skills/(.*)/SKILL.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/about",    "destination": "/o-nas",   "permanent": true },
     { "source": "/services", "destination": "/sluzby",  "permanent": true },
@@ -7,4 +49,3 @@
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
-
