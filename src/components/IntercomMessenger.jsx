@@ -1,20 +1,61 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import Intercom, { update } from '@intercom/messenger-js-sdk';
 
 const INTERCOM_APP_ID = import.meta.env.VITE_INTERCOM_APP_ID || 'q6mjoflj';
-const INTERCOM_REGION = import.meta.env.VITE_INTERCOM_REGION;
+const INTERCOM_REGION = import.meta.env.VITE_INTERCOM_REGION || 'us';
+const INTERCOM_SCRIPT_ID = 'intercom-messenger-loader';
+
+const REGION_API_BASES = {
+    us: 'https://api-iam.intercom.io',
+    eu: 'https://api-iam.eu.intercom.io',
+    au: 'https://api-iam.au.intercom.io',
+};
 
 function getIntercomSettings() {
-    const settings = {
+    return {
         app_id: INTERCOM_APP_ID,
+        api_base: REGION_API_BASES[INTERCOM_REGION] || REGION_API_BASES.us,
     };
+}
 
-    if (INTERCOM_REGION) {
-        settings.region = INTERCOM_REGION;
+function loadIntercomScript() {
+    if (document.getElementById(INTERCOM_SCRIPT_ID)) {
+        return;
     }
 
-    return settings;
+    const script = document.createElement('script');
+    script.id = INTERCOM_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://widget.intercom.io/widget/${INTERCOM_APP_ID}`;
+    document.head.appendChild(script);
+}
+
+function bootIntercom() {
+    if (typeof window === 'undefined') {
+        return;
+    }
+
+    window.intercomSettings = getIntercomSettings();
+
+    if (typeof window.Intercom === 'function') {
+        window.Intercom('reattach_activator');
+        window.Intercom('update', window.intercomSettings);
+        return;
+    }
+
+    const intercomStub = function (...args) {
+        intercomStub.q.push(args);
+    };
+
+    intercomStub.q = [];
+    window.Intercom = intercomStub;
+    loadIntercomScript();
+}
+
+function updateIntercom() {
+    if (typeof window.Intercom === 'function') {
+        window.Intercom('update');
+    }
 }
 
 export default function IntercomMessenger() {
@@ -27,7 +68,7 @@ export default function IntercomMessenger() {
             return;
         }
 
-        Intercom(getIntercomSettings());
+        bootIntercom();
         hasInitialized.current = true;
     }, []);
 
@@ -41,7 +82,7 @@ export default function IntercomMessenger() {
             return;
         }
 
-        update();
+        updateIntercom();
     }, [location.pathname, location.search, location.hash]);
 
     return null;
