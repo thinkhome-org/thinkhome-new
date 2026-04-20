@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "node --test",
+    "deploy": "pnpm run build && wrangler deploy",
+    "deploy:dry-run": "pnpm run build && wrangler deploy --dry-run",
     "start": "vite preview",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -41,6 +43,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "tailwindcss": "^4.2.1",
-    "vite": "^8.0.0"
+    "vite": "^8.0.0",
+    "wrangler": "4.83.0"
   }
 }
