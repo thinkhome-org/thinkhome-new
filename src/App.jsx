@@ -8,6 +8,7 @@ import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
 import ONasPage from './components/ONasPage';
 import GdprPage from './components/GdprPage';
+import IntercomMessenger from './components/IntercomMessenger';
 import WebMcpBridge from './components/WebMcpBridge';
 import sluzby from './data/sluzby.json';
 
@@ -53,6 +54,7 @@ export default function App() {
 
     return (
         <NavigationContext.Provider value={navigate}>
+            <IntercomMessenger />
             <div style={{ background: '#1533e8', minHeight: '100vh' }}>
                 <Routes>
                     <Route path="/" element={<HeroSection />} />
