@@ -137,9 +137,9 @@ export default function KontaktPage() {
                     {/* Phone */}
                     <div className="kontakt-block">
                         <p className="kontakt-label">Telefon</p>
-                        <CopyRow value="+420222160782">
-                            <a href="tel:+420222160782" className="kontakt-link">
-                                +420 222 160 782
+                        <CopyRow value="+420728981602">
+                            <a href="tel:+420728981602" className="kontakt-link">
+                                +420 728 981 602
                             </a>
                         </CopyRow>
                         <p className="kontakt-note">Po–Ne 10:00–20:00</p>

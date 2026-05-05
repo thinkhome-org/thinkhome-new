@@ -10,7 +10,7 @@ Use this skill when you need the public contact and legal information for ThinkH
 
 - Company: ThinkHome s.r.o.
 - Email: info@thinkhome.org
-- Phone: +420 222 160 782
+- Phone: +420 728 981 602
 - Datová schránka: hujt7i5
 - Address: Rytířova 777/3, 143 00 Praha — Kamýk
 - IČO: 23893591

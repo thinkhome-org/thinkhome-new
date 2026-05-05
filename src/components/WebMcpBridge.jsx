@@ -11,8 +11,8 @@ const ROUTES = {
 const CONTACT_DETAILS = {
     companyName: 'ThinkHome s.r.o.',
     email: 'info@thinkhome.org',
-    phone: '+420 222 160 782',
-    phoneHref: 'tel:+420222160782',
+    phone: '+420 728 981 602',
+    phoneHref: 'tel:+420728981602',
     dataBox: 'hujt7i5',
     address: 'Rytířova 777/3, 143 00 Praha — Kamýk',
     companyId: '23893591',
