@@ -17,9 +17,6 @@ importers:
       '@fontsource-variable/manrope':
         specifier: ^5.2.8
         version: 5.2.8
-      '@intercom/messenger-js-sdk':
-        specifier: ^0.0.19
-        version: 0.0.19
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(react@19.2.4)
@@ -731,9 +728,6 @@ packages:
     peerDependenciesMeta:
       '@types/node':
         optional: true
-
-  '@intercom/messenger-js-sdk@0.0.19':
-    resolution: {integrity: sha512-ZpzJXLyo4VReQoOW/OOCYZqylhg2uwj0RGU6pcYazFDuk/S1Xsqi0GChLQMDviBQ/SuKB1Mv50uFsY7KzHljGw==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -3386,8 +3380,6 @@ snapshots:
   '@inquirer/figures@1.0.15': {}
 
   '@inquirer/type@3.0.10': {}
-
-  '@intercom/messenger-js-sdk@0.0.19': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
