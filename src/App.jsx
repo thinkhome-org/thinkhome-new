@@ -55,7 +55,7 @@ export default function App() {
     return (
         <NavigationContext.Provider value={navigate}>
             <ZammadChat />
-            <div style={{ background: '#1533e8', minHeight: '100vh' }}>
+            <div style={{ background: '#fff', minHeight: '100vh' }}>
                 <Routes>
                     <Route path="/" element={<HeroSection />} />
                     <Route path="/sluzby" element={<SluzbyPage />} />

@@ -240,9 +240,7 @@ export default function ONasPage() {
                 }
             `}</style>
 
-            <div style={{ background: BLUE }}>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

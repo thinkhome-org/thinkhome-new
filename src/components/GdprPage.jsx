@@ -266,9 +266,7 @@ export default function GdprPage() {
                 }
             `}</style>
 
-            <div style={{ background: BLUE }}>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

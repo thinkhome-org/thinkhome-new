@@ -25,11 +25,11 @@ function CopyButton({ value }) {
                 width: "28px",
                 height: "28px",
                 flexShrink: 0,
-                color: copied ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.3)",
+                color: copied ? "rgba(21,51,232,0.9)" : "rgba(21,51,232,0.3)",
                 transition: "color 0.15s",
             }}
-            onMouseEnter={(e) => { if (!copied) e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
-            onMouseLeave={(e) => { if (!copied) e.currentTarget.style.color = "rgba(255,255,255,0.3)"; }}
+            onMouseEnter={(e) => { if (!copied) e.currentTarget.style.color = "rgba(21,51,232,0.7)"; }}
+            onMouseLeave={(e) => { if (!copied) e.currentTarget.style.color = "rgba(21,51,232,0.3)"; }}
         >
             {copied ? (
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -78,11 +78,11 @@ export default function KontaktPage() {
     return (
         <div style={{
             minHeight: "100vh",
-            background: "#1533e8",
+            background: "#fff",
             fontFamily: "'Manrope Variable', Manrope, sans-serif",
-            color: "#fff",
+            color: "#1533e8",
         }}>
-            <Navbar />
+            <Navbar light />
 
             <main style={{
                 padding: "clamp(6rem, 14vw, 10rem) clamp(1.5rem, 8vw, 7rem) clamp(4rem, 8vw, 6rem)",
@@ -95,7 +95,7 @@ export default function KontaktPage() {
                         fontWeight: 700,
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "rgba(255,255,255,0.75)",
+                        color: "rgba(21,51,232,0.75)",
                         margin: "0 0 1.25rem",
                     }}>Kontakt</p>
                     <h1 style={{
@@ -105,14 +105,14 @@ export default function KontaktPage() {
                         letterSpacing: "-0.03em",
                         lineHeight: 1.05,
                         margin: "0 0 1.25rem",
-                        color: "#fff",
+                        color: "#1533e8",
                     }}>
                         Jsme tu pro vás.
                     </h1>
                     <p style={{
                         fontSize: "clamp(0.9rem, 1.4vw, 1rem)",
                         fontWeight: 400,
-                        color: "rgba(255,255,255,0.9)",
+                        color: "rgba(21,51,232,0.9)",
                         lineHeight: 1.65,
                         margin: 0,
                         maxWidth: "44ch",
@@ -160,7 +160,7 @@ export default function KontaktPage() {
                 <div style={{
                     width: "100%",
                     height: "1px",
-                    background: "rgba(255,255,255,0.1)",
+                    background: "rgba(21,51,232,0.1)",
                     margin: "clamp(3rem, 6vw, 4rem) 0",
                 }} />
 
@@ -171,7 +171,7 @@ export default function KontaktPage() {
                     <LegalItem label="IČO" value="23893591" />
                     <LegalItem label="DIČ" value="CZ23893591" />
                     <LegalItem label="Účet" value="363677109/0300" />
-                    <span className="kontakt-legal-note" style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>
+                    <span className="kontakt-legal-note" style={{ color: "rgba(21,51,232,0.7)", fontSize: "0.78rem" }}>
                         Spisová značka C 434666 vedená u Městského soudu v Praze
                     </span>
                 </div>
@@ -203,7 +203,7 @@ export default function KontaktPage() {
                 @media (max-width: 767px) {
                     .kontakt-block {
                         padding: 1.4rem 0;
-                        border-bottom: 1px solid rgba(255,255,255,0.08);
+                        border-bottom: 1px solid rgba(21,51,232,0.08);
                     }
                     .kontakt-block:first-child {
                         padding-top: 0;
@@ -215,14 +215,14 @@ export default function KontaktPage() {
                     font-weight: 700;
                     letter-spacing: 0.15em;
                     text-transform: uppercase;
-                    color: rgba(255,255,255,0.75);
+                    color: rgba(21,51,232,0.75);
                     margin: 0 0 0.4rem;
                 }
 
                 .kontakt-value {
                     font-size: clamp(0.95rem, 1.4vw, 1.05rem);
                     font-weight: 500;
-                    color: rgba(255,255,255,0.85);
+                    color: rgba(21,51,232,0.85);
                     line-height: 1.7;
                     margin: 0;
                 }
@@ -230,21 +230,21 @@ export default function KontaktPage() {
                 .kontakt-link {
                     font-size: clamp(0.95rem, 1.4vw, 1.05rem);
                     font-weight: 600;
-                    color: #fff;
+                    color: #1533e8;
                     text-decoration: none;
-                    border-bottom: 1px solid rgba(255,255,255,0.3);
+                    border-bottom: 1px solid rgba(21,51,232,0.3);
                     padding-bottom: 2px;
                     width: fit-content;
                     transition: border-color 0.2s;
                 }
                 .kontakt-link:hover {
-                    border-color: rgba(255,255,255,0.9);
+                    border-color: rgba(21,51,232,0.9);
                 }
 
                 .kontakt-note {
                     font-size: 0.8rem;
                     font-weight: 400;
-                    color: rgba(255,255,255,0.8);
+                    color: rgba(21,51,232,0.8);
                     margin: 0.1rem 0 0;
                 }
 
@@ -255,30 +255,30 @@ export default function KontaktPage() {
                     gap: 0.5rem 1.5rem;
                     font-size: 0.78rem;
                     font-weight: 400;
-                    color: rgba(255,255,255,0.7);
+                    color: rgba(21,51,232,0.7);
                     line-height: 1.7;
                 }
 
                 @media (max-width: 767px) {
                     .kontakt-header-label {
                         font-size: 0.78rem !important;
-                        color: rgba(255,255,255,0.9) !important;
+                        color: rgba(21,51,232,0.9) !important;
                     }
                     .kontakt-label {
                         font-size: 0.78rem;
-                        color: rgba(255,255,255,0.9);
+                        color: rgba(21,51,232,0.9);
                     }
                     .kontakt-note {
                         font-size: 0.88rem;
-                        color: rgba(255,255,255,0.9);
+                        color: rgba(21,51,232,0.9);
                     }
                     .kontakt-legal {
                         font-size: 0.82rem;
-                        color: rgba(255,255,255,0.85);
+                        color: rgba(21,51,232,0.85);
                     }
                     .kontakt-legal-note {
                         font-size: 0.82rem !important;
-                        color: rgba(255,255,255,0.85) !important;
+                        color: rgba(21,51,232,0.85) !important;
                     }
                 }
             `}</style>

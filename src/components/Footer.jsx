@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer style={{
             fontFamily: "'Manrope Variable', Manrope, sans-serif",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            borderTop: "1px solid rgba(21,51,232,0.1)",
             padding: "clamp(3rem, 8vw, 5rem) clamp(1.5rem, 8vw, 7rem) clamp(2rem, 4vw, 3rem)",
         }}>
             <div className="footer-top">
@@ -19,7 +19,7 @@ export default function Footer() {
                 <div className="footer-brand">
                     <a href="/" onClick={(e) => navLink('/', e)} style={{ textDecoration: "none" }}>
                         <span style={{
-                            color: "#fff",
+                            color: "#1533e8",
                             fontWeight: 800,
                             fontSize: "0.95rem",
                             letterSpacing: "-0.02em",
@@ -31,7 +31,7 @@ export default function Footer() {
                         margin: "0.75rem 0 0",
                         fontSize: "0.8rem",
                         fontWeight: 400,
-                        color: "rgba(255,255,255,0.4)",
+                        color: "rgba(21,51,232,0.4)",
                         lineHeight: 1.6,
                         maxWidth: "28ch",
                     }}>
@@ -60,7 +60,7 @@ export default function Footer() {
             <div style={{
                 marginTop: "clamp(3rem, 6vw, 4rem)",
                 paddingTop: "1.5rem",
-                borderTop: "1px solid rgba(255,255,255,0.07)",
+                borderTop: "1px solid rgba(21,51,232,0.07)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
@@ -70,7 +70,7 @@ export default function Footer() {
                 <span style={{
                     fontSize: "0.72rem",
                     fontWeight: 500,
-                    color: "rgba(255,255,255,0.25)",
+                    color: "rgba(21,51,232,0.25)",
                     letterSpacing: "0.04em",
                 }}>
                     © {new Date().getFullYear()} Thinkhome s.r.o.
@@ -78,7 +78,7 @@ export default function Footer() {
                 <span style={{
                     fontSize: "0.72rem",
                     fontWeight: 600,
-                    color: "rgba(255,255,255,0.2)",
+                    color: "rgba(21,51,232,0.2)",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                 }}>
@@ -115,20 +115,20 @@ export default function Footer() {
                     font-weight: 600;
                     letter-spacing: 0.1em;
                     text-transform: uppercase;
-                    color: rgba(255,255,255,0.25);
+                    color: rgba(21,51,232,0.25);
                     margin-bottom: 0.3rem;
                 }
 
                 .footer-link {
                     font-size: 0.82rem;
                     font-weight: 500;
-                    color: rgba(255,255,255,0.5);
+                    color: rgba(21,51,232,0.5);
                     text-decoration: none;
                     letter-spacing: 0.01em;
                     transition: color 0.15s;
                     width: fit-content;
                 }
-                .footer-link:hover { color: #fff; }
+                .footer-link:hover { color: #1533e8; }
 
                 @media (max-width: 600px) {
                     .footer-top {
@@ -141,16 +141,16 @@ export default function Footer() {
                     .footer-brand p {
                         font-size: 1.2rem;
                         font-weight: 600;
-                        color: #fff;
+                        color: #1533e8;
                     }
                     .footer-link {
                         font-size: 1.1rem;
                         font-weight: 500;
-                        color: #fff;
+                        color: #1533e8;
                     }
                     .footer-col-label {
                         font-size: 0.82rem;
-                        color: #fff;
+                        color: #1533e8;
                     }
                 }
             `}</style>

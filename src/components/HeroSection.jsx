@@ -1,13 +1,7 @@
-import Prism from "./Prism";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ShapeWaves from "./ShapeWaves";
 import { useAppNavigate } from "../context/navigate";
-
-const isSafari =
-  typeof CSS !== "undefined" &&
-  CSS.supports("-webkit-appearance", "none") &&
-  !navigator.userAgent.includes("Chrome") &&
-  !navigator.userAgent.includes("Chromium");
 
 export default function HeroSection() {
   const navigate = useAppNavigate();
@@ -21,59 +15,34 @@ export default function HeroSection() {
           height: "100vh",
           minHeight: "560px",
           overflow: "hidden",
-          background: "#1533e8",
+          background: "#fff",
           fontFamily: "'Manrope Variable', Manrope, sans-serif",
         }}
         className="hero-section"
       >
-        <Navbar />
+        <Navbar light />
 
-        {/* Prism — desktop, non-Safari */}
-        {!isSafari && (
-          <div className="prism-container prism-desktop">
-            <Prism
-              animationType="rotate"
-              transparent={true}
-              hueShift={0}
-              colorFrequency={0.3}
-              glow={0.5}
-              bloom={1.5}
-              noise={0.0}
-              scale={1.7}
-              timeScale={0.35}
-            />
-          </div>
-        )}
-
-        {/* Prism — desktop, Safari/WebKit only (reduced glow) */}
-        {isSafari && (
-          <div className="prism-container prism-desktop">
-            <Prism
-              animationType="rotate"
-              transparent={true}
-              hueShift={0}
-              colorFrequency={0.3}
-              glow={0.4}
-              bloom={0.7}
-              noise={0.0}
-              scale={1.7}
-              timeScale={0.35}
-            />
-          </div>
-        )}
-
-        {/* Prism — mobile only */}
-        <div className="prism-container prism-mobile">
-          <Prism
-            animationType="rotate"
-            transparent={true}
-            hueShift={0}
-            colorFrequency={0.3}
-            glow={0.4}
-            bloom={1.0}
-            noise={0.0}
-            scale={1.2}
-            timeScale={0.35}
+        <div className="shape-waves-slot">
+          <ShapeWaves
+            shapes="mixed"
+            cellSize={12}
+            dotSize={0.75}
+            color="#7d96e4"
+            hoverColor="#1533e8"
+            backgroundColor="#ffffff"
+            speed={0.28}
+            scale={2.4}
+            contrast={1}
+            brightness={0.45}
+            flow={0.05}
+            direction={18}
+            fade={0.05}
+            interactive
+            splashRadius={40}
+            splashStrength={0.4}
+            glow={0.35}
+            intro
+            introDuration={2.6}
           />
         </div>
 
@@ -105,7 +74,7 @@ export default function HeroSection() {
           <button
             className="hero-btn-primary"
             onClick={() => navigate('/sluzby')}
-            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,255,255,0.3)")}
+            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px rgba(21,51,232,0.25)")}
             onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
           >
             Zjistit více
@@ -131,35 +100,37 @@ export default function HeroSection() {
                     }
                 }
 
-                /* ── Prism position ─────────────────────────── */
-                .prism-container {
+                /* ── Shape waves — wide field, soft edges, quiet under the nav ─ */
+                .shape-waves-slot {
                     position: absolute;
-                }
-                .prism-desktop {
+                    z-index: 0;
+                    pointer-events: none;
                     inset: 0;
-                }
-                .prism-mobile {
-                    display: none;
+                    -webkit-mask-image:
+                        linear-gradient(to bottom, transparent 0, transparent 76px, #000 200px),
+                        linear-gradient(to right, transparent 0, transparent 10%, rgba(0,0,0,0.18) 28%, rgba(0,0,0,0.4) 46%, #000 66%, #000 94%, transparent 100%);
+                    -webkit-mask-composite: source-in;
+                    mask-image:
+                        linear-gradient(to bottom, transparent 0, transparent 76px, #000 200px),
+                        linear-gradient(to right, transparent 0, transparent 10%, rgba(0,0,0,0.18) 28%, rgba(0,0,0,0.4) 46%, #000 66%, #000 94%, transparent 100%);
+                    mask-composite: intersect;
                 }
                 @media (max-width: 767px) {
-                    .prism-desktop {
-                        display: none;
-                    }
-                    .prism-mobile {
-                        display: block;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        bottom: 0;
-                        top: auto;
-                        width: 100%;
-                        height: 55%;
-                        opacity: 0.9;
+                    .shape-waves-slot {
+                        inset: 50% 0 32% 0;
+                        -webkit-mask-image:
+                            linear-gradient(to bottom, transparent, #000 24%),
+                            linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
+                        mask-image:
+                            linear-gradient(to bottom, transparent, #000 24%),
+                            linear-gradient(to right, transparent, #000 14%, #000 86%, transparent);
                     }
                 }
 
                 /* ── Glass panel ────────────────────────────── */
                 .hero-panel {
                     position: absolute;
+                    z-index: 1;
                     top: 0;
                     left: 0;
                     width: 66.666%;
@@ -214,7 +185,7 @@ export default function HeroSection() {
 
                 /* ── Headline ───────────────────────────────── */
                 .hero-h1 {
-                    color: #fff;
+                    color: #1533e8;
                     font-family: inherit;
                     font-weight: 800;
                     font-size: clamp(2.2rem, 5.5vw, 4.2rem);
@@ -230,9 +201,9 @@ export default function HeroSection() {
 
                 /* ── Body copy ──────────────────────────────── */
                 .hero-p {
-                    color: rgba(255,255,255,0.65);
+                    color: rgba(21,51,232,0.88);
                     font-family: inherit;
-                    font-weight: 400;
+                    font-weight: 600;
                     font-size: clamp(0.875rem, 1.4vw, 1rem);
                     line-height: 1.65;
                     margin: 0;
@@ -241,8 +212,8 @@ export default function HeroSection() {
                 @media (max-width: 767px) {
                     .hero-p {
                         font-size: 1rem;
-                        font-weight: 500;
-                        color: rgba(255,255,255,0.9);
+                        font-weight: 700;
+                        color: rgba(21,51,232,0.9);
                         max-width: 100%;
                     }
                 }
@@ -275,8 +246,8 @@ export default function HeroSection() {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    background: #fff;
-                    color: #1533e8;
+                    background: #1533e8;
+                    color: #fff;
                     font-family: inherit;
                     font-weight: 700;
                     font-size: 0.75rem;
@@ -299,20 +270,20 @@ export default function HeroSection() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.4rem;
-                    color: #fff;
+                    color: #1533e8;
                     font-family: inherit;
                     font-weight: 700;
                     font-size: 0.75rem;
                     letter-spacing: 0.12em;
                     text-transform: uppercase;
-                    border-bottom: 1px solid rgba(255,255,255,0.35);
+                    border-bottom: 1px solid rgba(21,51,232,0.35);
                     padding-bottom: 2px;
                     transition: border-color 0.2s, text-shadow 0.2s;
                 }
                 @media (hover: hover) {
                     .hero-btn-arrow:hover {
-                        border-color: rgba(255,255,255,0.9);
-                        text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 28px rgba(255,255,255,0.35);
+                        border-color: rgba(21,51,232,0.9);
+                        text-shadow: 0 0 12px rgba(21,51,232,0.7), 0 0 28px rgba(21,51,232,0.35);
                     }
                 }
                 @media (max-width: 767px) {

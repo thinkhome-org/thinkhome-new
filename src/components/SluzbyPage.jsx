@@ -23,11 +23,11 @@ export function ServiceDetail({ service }) {
     return (
         <div style={{
             minHeight: "100vh",
-            background: "#1533e8",
+            background: "#fff",
             fontFamily: "'Manrope Variable', Manrope, sans-serif",
-            color: "#fff",
+            color: "#1533e8",
         }}>
-            <Navbar />
+            <Navbar light />
 
             <div style={{
                 padding: "clamp(6rem, 14vw, 10rem) clamp(1.5rem, 8vw, 7rem) clamp(4rem, 8vw, 6rem)",
@@ -46,12 +46,12 @@ export function ServiceDetail({ service }) {
                         fontWeight: 600,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
-                        color: "rgba(255,255,255,0.5)",
+                        color: "rgba(21,51,232,0.5)",
                         marginBottom: "clamp(2rem, 5vw, 3.5rem)",
                         transition: "color 0.15s",
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = "#fff"}
-                    onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,0.5)"}
+                    onMouseEnter={(e) => e.currentTarget.style.color = "#1533e8"}
+                    onMouseLeave={(e) => e.currentTarget.style.color = "rgba(21,51,232,0.5)"}
                 >
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                         <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -70,7 +70,7 @@ export function ServiceDetail({ service }) {
                             letterSpacing: "-0.03em",
                             lineHeight: 1.05,
                             margin: "0 0 1.5rem",
-                            color: "#fff",
+                            color: "#1533e8",
                         }}>
                             {service.title}
                         </h1>
@@ -78,7 +78,7 @@ export function ServiceDetail({ service }) {
                         <p style={{
                             fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
                             fontWeight: 400,
-                            color: "rgba(255,255,255,0.65)",
+                            color: "rgba(21,51,232,0.65)",
                             lineHeight: 1.75,
                             margin: 0,
                         }}>
@@ -96,13 +96,13 @@ export function ServiceDetail({ service }) {
                                         alignItems: "baseline",
                                         gap: "1.25rem",
                                         padding: "1.6rem 0",
-                                        borderBottom: "1px solid rgba(255,255,255,0.07)",
+                                        borderBottom: "1px solid rgba(21,51,232,0.07)",
                                     }}>
                                         <span className="sd-num" style={{
                                             fontSize: "0.65rem",
                                             fontWeight: 600,
                                             letterSpacing: "0.1em",
-                                            color: "rgba(255,255,255,0.3)",
+                                            color: "rgba(21,51,232,0.3)",
                                             flexShrink: 0,
                                             fontVariantNumeric: "tabular-nums",
                                             paddingTop: "0.2rem",
@@ -111,14 +111,14 @@ export function ServiceDetail({ service }) {
                                             <p style={{
                                                 fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
                                                 fontWeight: 600,
-                                                color: "rgba(255,255,255,0.95)",
+                                                color: "rgba(21,51,232,0.95)",
                                                 margin: "0 0 0.45rem",
                                                 lineHeight: 1.4,
                                             }}>{item.title}</p>
                                             <p style={{
                                                 fontSize: "clamp(0.82rem, 1.1vw, 0.92rem)",
                                                 fontWeight: 400,
-                                                color: "rgba(255,255,255,0.55)",
+                                                color: "rgba(21,51,232,0.55)",
                                                 margin: 0,
                                                 lineHeight: 1.7,
                                             }}>{item.body}</p>
@@ -131,16 +131,16 @@ export function ServiceDetail({ service }) {
                                         alignItems: "baseline",
                                         gap: "1.25rem",
                                         padding: "1.1rem 0",
-                                        borderBottom: "1px solid rgba(255,255,255,0.07)",
+                                        borderBottom: "1px solid rgba(21,51,232,0.07)",
                                         fontSize: "clamp(0.9rem, 1.3vw, 1rem)",
                                         fontWeight: 500,
-                                        color: "rgba(255,255,255,0.9)",
+                                        color: "rgba(21,51,232,0.9)",
                                     }}>
                                         <span className="sd-num" style={{
                                             fontSize: "0.65rem",
                                             fontWeight: 600,
                                             letterSpacing: "0.1em",
-                                            color: "rgba(255,255,255,0.3)",
+                                            color: "rgba(21,51,232,0.3)",
                                             flexShrink: 0,
                                             fontVariantNumeric: "tabular-nums",
                                         }}>0{i + 1}</span>
@@ -177,7 +177,7 @@ export function ServiceDetail({ service }) {
                     grid-template-columns: 2fr 3fr;
                     gap: clamp(3rem, 6vw, 7rem);
                     align-items: start;
-                    border-top: 1px solid rgba(255,255,255,0.1);
+                    border-top: 1px solid rgba(21,51,232,0.1);
                     padding-top: clamp(2.5rem, 5vw, 4rem);
                 }
                 .sd-left {
@@ -195,7 +195,7 @@ export function ServiceDetail({ service }) {
                     .sd-left p {
                         font-size: 1.2rem;
                         font-weight: 600;
-                        color: #fff;
+                        color: #1533e8;
                     }
                 }
                 .sd-cta-wrap {
@@ -205,7 +205,7 @@ export function ServiceDetail({ service }) {
                     justify-content: space-between;
                     gap: clamp(1.5rem, 4vw, 3rem);
                     padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 8vw, 7rem);
-                    border-top: 1px solid rgba(255,255,255,0.1);
+                    border-top: 1px solid rgba(21,51,232,0.1);
                 }
                 .sd-cta-copy {
                     flex: 1;
@@ -218,7 +218,7 @@ export function ServiceDetail({ service }) {
                 .sd-cta-headline {
                     font-size: clamp(1.15rem, 2vw, 1.45rem);
                     font-weight: 800;
-                    color: #fff;
+                    color: #1533e8;
                     margin: 0;
                     letter-spacing: -0.02em;
                     line-height: 1.25;
@@ -226,7 +226,7 @@ export function ServiceDetail({ service }) {
                 .sd-cta-sub {
                     font-size: clamp(0.82rem, 1.1vw, 0.95rem);
                     font-weight: 400;
-                    color: rgba(255,255,255,0.55);
+                    color: rgba(21,51,232,0.55);
                     margin: 0;
                     line-height: 1.55;
                     max-width: 42ch;
@@ -238,8 +238,8 @@ export function ServiceDetail({ service }) {
                     align-items: center;
                     gap: 0.6rem;
                     padding: 0.85rem 1.75rem;
-                    background: #fff;
-                    color: #1533e8;
+                    background: #1533e8;
+                    color: #fff;
                     font-family: 'Manrope Variable', Manrope, sans-serif;
                     font-size: 0.88rem;
                     font-weight: 700;
@@ -250,7 +250,7 @@ export function ServiceDetail({ service }) {
                     flex-shrink: 0;
                 }
                 .sd-cta-btn:hover {
-                    background: rgba(255,255,255,0.88);
+                    background: rgba(21,51,232,0.88);
                     transform: translateY(-1px);
                 }
                 @media (max-width: 600px) {
@@ -285,11 +285,11 @@ export default function SluzbyPage() {
     return (
         <div style={{
             minHeight: "100vh",
-            background: "#1533e8",
+            background: "#fff",
             fontFamily: "'Manrope Variable', Manrope, sans-serif",
-            color: "#fff",
+            color: "#1533e8",
         }}>
-            <Navbar />
+            <Navbar light />
 
             <main style={{ padding: "clamp(6rem, 14vw, 10rem) clamp(1.5rem, 8vw, 7rem) clamp(4rem, 8vw, 6rem)" }}>
                 <div className="sluzby-list">
@@ -323,7 +323,7 @@ export default function SluzbyPage() {
                 .sluzby-list {
                     display: flex;
                     flex-direction: column;
-                    border-top: 1px solid rgba(255,255,255,0.1);
+                    border-top: 1px solid rgba(21,51,232,0.1);
                 }
 
                 .sluzba-block {
@@ -334,15 +334,15 @@ export default function SluzbyPage() {
                     overflow: hidden;
                     padding: clamp(2.5rem, 5vw, 4rem);
                     min-height: clamp(220px, 30vw, 320px);
-                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                    border-bottom: 1px solid rgba(21,51,232,0.1);
                     cursor: pointer;
                     user-select: none;
                     outline: none;
                     transition: background 0.15s;
                 }
                 @media (hover: hover) {
-                    .sluzba-block:hover { background: rgba(255,255,255,0.04); }
-                    .sluzba-block:hover .sluzba-arrow { color: #fff; }
+                    .sluzba-block:hover { background: rgba(21,51,232,0.04); }
+                    .sluzba-block:hover .sluzba-arrow { color: #1533e8; }
                 }
                 @media (max-width: 767px) {
                     .sluzba-block {
@@ -368,13 +368,13 @@ export default function SluzbyPage() {
                     letter-spacing: -0.02em;
                     line-height: 1.2;
                     margin: 0;
-                    color: #fff;
+                    color: #1533e8;
                 }
 
                 .sluzba-subtitle {
                     font-size: 0.88rem;
                     font-weight: 400;
-                    color: rgba(255,255,255,0.55);
+                    color: rgba(21,51,232,0.55);
                     margin: 0;
                     line-height: 1.5;
                 }
@@ -397,7 +397,7 @@ export default function SluzbyPage() {
                 .sluzba-desc {
                     font-size: 0.82rem;
                     font-weight: 400;
-                    color: rgba(255,255,255,0.5);
+                    color: rgba(21,51,232,0.5);
                     margin: 0;
                     padding-top: 0.75rem;
                     line-height: 1.6;
@@ -421,7 +421,7 @@ export default function SluzbyPage() {
                     position: absolute;
                     bottom: clamp(2.5rem, 5vw, 4rem);
                     right: clamp(2.5rem, 5vw, 4rem);
-                    color: rgba(255,255,255,0.3);
+                    color: rgba(21,51,232,0.3);
                     transition: color 0.15s, transform 0.15s;
                 }
                 @media (hover: hover) {
@@ -436,15 +436,15 @@ export default function SluzbyPage() {
                     .sluzba-arrow {
                         bottom: 1.75rem;
                         right: 0;
-                        color: rgba(255,255,255,0.6);
+                        color: rgba(21,51,232,0.6);
                     }
                     .sd-back-btn {
                         font-size: 0.82rem !important;
-                        color: rgba(255,255,255,0.8) !important;
+                        color: rgba(21,51,232,0.8) !important;
                     }
                     .sd-num {
                         font-size: 0.72rem !important;
-                        color: rgba(255,255,255,0.65) !important;
+                        color: rgba(21,51,232,0.65) !important;
                     }
                 }
             `}</style>
