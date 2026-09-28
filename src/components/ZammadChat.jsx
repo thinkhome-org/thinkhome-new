@@ -21,6 +21,7 @@ async function startZammadChat() {
 
         hasStarted = true;
         new ZammadChat({
+            host: 'https://servis.thinkhome.org',
             background: '#1537de',
             fontSize: '12px',
             flat: true,
