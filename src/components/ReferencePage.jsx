@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import TrustSignals from "./TrustSignals";
+import TeamSection from "./TeamSection";
 import { useAppNavigate } from "../context/navigate";
 
 const BLUE = "#1533e8";
@@ -49,6 +50,8 @@ export default function ReferencePage() {
                 </div>
 
                 <TrustSignals />
+
+                <TeamSection />
 
                 <div className="ref-cta">
                     <p className="ref-cta-text">

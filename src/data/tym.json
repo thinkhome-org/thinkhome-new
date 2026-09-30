@@ -1,0 +1,20 @@
+[
+  {
+    "id": "samuel-paluba",
+    "name": "Samuel Paluba",
+    "role": "CEO",
+    "photo": ""
+  },
+  {
+    "id": "matej-divis",
+    "name": "Matěj Diviš",
+    "role": "Finanční manažer",
+    "photo": ""
+  },
+  {
+    "id": "benjamin-dunajevsky",
+    "name": "Benjamin Dunajevský",
+    "role": "Právní expert",
+    "photo": ""
+  }
+]

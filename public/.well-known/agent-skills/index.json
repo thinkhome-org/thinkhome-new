@@ -6,7 +6,7 @@
       "type": "skill-md",
       "description": "Navigate the public ThinkHome website and choose the correct public page.",
       "url": "/.well-known/agent-skills/site-navigation/SKILL.md",
-      "digest": "sha256:299d952db4b70747a93f616fee230e1e108aea5049bd4ede05128305e2772a19"
+      "digest": "sha256:a6f867e50c08df9fed13906f9f98fe7da535ee9e8953ca9d4b36f5aeaf1bbd88"
     },
     {
       "name": "service-catalog",
