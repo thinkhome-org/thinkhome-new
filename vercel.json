@@ -44,6 +44,7 @@
   "redirects": [
     { "source": "/about",    "destination": "/o-nas",   "permanent": true },
     { "source": "/services", "destination": "/sluzby",  "permanent": true },
+    { "source": "/references", "destination": "/reference", "permanent": true },
     { "source": "/contakt",  "destination": "/kontakt", "permanent": true },
     { "source": "/contact",  "destination": "/kontakt", "permanent": true }
   ],

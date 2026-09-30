@@ -4,6 +4,7 @@ const ROUTES = {
     home: '/',
     services: '/sluzby',
     about: '/o-nas',
+    references: '/reference',
     contact: '/kontakt',
     gdpr: '/gdpr',
 };

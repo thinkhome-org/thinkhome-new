@@ -29,6 +29,7 @@ export default function Navbar({ light = false }) {
         { label: "Domů", href: "/", path: "/" },
         { label: "O nás", href: "/o-nas", path: "/o-nas" },
         { label: "Služby", href: "/sluzby", path: "/sluzby" },
+        { label: "Reference", href: "/reference", path: "/reference" },
     ];
 
     return (

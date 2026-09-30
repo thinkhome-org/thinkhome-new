@@ -8,13 +8,10 @@ Use this skill when you need a compact summary of ThinkHome's public services an
 
 ## Service detail routes
 
-- `/sluzby/spravovane-it`
-- `/sluzby/anonymizace-osob`
+- `/sluzby/sprava-hardware-a-siti`
+- `/sluzby/kyberbezpecnost-a-ochrana-dat`
+- `/sluzby/weby-a-digitalni-prezentace`
 - `/sluzby/ai-reseni`
-- `/sluzby/kyberneticka-bezpecnost`
-- `/sluzby/cloud-a-infrastruktura`
-- `/sluzby/helpdesk`
-- `/sluzby/site-a-konektivita`
 
 ## When to use this skill
 

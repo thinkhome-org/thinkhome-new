@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import TrustSignals from "./TrustSignals";
 import sluzby from "../data/sluzby.json";
 import { useAppNavigate } from "../context/navigate";
 
@@ -317,6 +318,40 @@ export default function SluzbyPage() {
                         </div>
                     ))}
                 </div>
+
+                <section className="why-thinkhome">
+                    <div className="why-copy">
+                        <h2 className="why-title">Proč právě ThinkHome?</h2>
+                        <p className="why-lead">Mladý tým, který nečeká na konec pracovní doby.</p>
+                        <p className="why-note">Oproti velkým IT korporátům u nás nečekáte dny na vyřízení jednoho tiketu.</p>
+                    </div>
+                    <ul className="why-list">
+                        {[
+                            {
+                                title: "Blesková reakce",
+                                body: "Reagujeme okamžitě a problémy řešíme hned, ne příští týden. Garantujeme smluvní dobu odezvy (SLA).",
+                            },
+                            {
+                                title: "Nejnovější technologie",
+                                body: "Sledujeme aktuální trendy a používáme efektivní, moderní nástroje.",
+                            },
+                            {
+                                title: "Konkrétní člověk",
+                                body: "Mluvíte vždy s konkrétním člověkem, který zná vaše prostředí, ne s anonymním call centrem.",
+                            },
+                        ].map((item, i) => (
+                            <li key={item.title} className="why-item">
+                                <span className="why-num">0{i + 1}</span>
+                                <div>
+                                    <p className="why-item-title">{item.title}</p>
+                                    <p className="why-item-body">{item.body}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                <TrustSignals />
             </main>
 
             <style>{`
@@ -429,7 +464,91 @@ export default function SluzbyPage() {
                         transform: translate(2px, -2px);
                     }
                 }
+                .why-thinkhome {
+                    display: grid;
+                    grid-template-columns: 2fr 3fr;
+                    gap: clamp(3rem, 6vw, 7rem);
+                    align-items: start;
+                    margin-top: clamp(4rem, 8vw, 7rem);
+                    padding-top: clamp(2.5rem, 5vw, 4rem);
+                    border-top: 1px solid rgba(21,51,232,0.1);
+                }
+                .why-title {
+                    font-family: 'Manrope Variable', Manrope, sans-serif;
+                    font-size: clamp(2rem, 4vw, 3rem);
+                    font-weight: 800;
+                    letter-spacing: -0.03em;
+                    line-height: 1.05;
+                    margin: 0 0 1.25rem;
+                    color: #1533e8;
+                }
+                .why-lead {
+                    font-size: clamp(1rem, 1.4vw, 1.15rem);
+                    font-weight: 600;
+                    color: #1533e8;
+                    line-height: 1.45;
+                    margin: 0 0 0.85rem;
+                    max-width: 28ch;
+                }
+                .why-note {
+                    font-size: clamp(0.88rem, 1.2vw, 1rem);
+                    font-weight: 400;
+                    color: rgba(21,51,232,0.6);
+                    line-height: 1.7;
+                    margin: 0;
+                    max-width: 36ch;
+                }
+                .why-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                .why-item {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 1.25rem;
+                    padding: 1.6rem 0;
+                    border-bottom: 1px solid rgba(21,51,232,0.07);
+                }
+                .why-item:first-child {
+                    padding-top: 0;
+                }
+                .why-num {
+                    font-size: 0.65rem;
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
+                    color: rgba(21,51,232,0.3);
+                    flex-shrink: 0;
+                    font-variant-numeric: tabular-nums;
+                }
+                .why-item-title {
+                    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+                    font-weight: 700;
+                    color: #1533e8;
+                    margin: 0 0 0.4rem;
+                    line-height: 1.35;
+                }
+                .why-item-body {
+                    font-size: clamp(0.85rem, 1.15vw, 0.95rem);
+                    font-weight: 400;
+                    color: rgba(21,51,232,0.6);
+                    margin: 0;
+                    line-height: 1.7;
+                }
                 @media (max-width: 767px) {
+                    .why-thinkhome {
+                        grid-template-columns: 1fr;
+                        gap: 2rem;
+                        margin-top: 3rem;
+                    }
+                    .why-lead,
+                    .why-note {
+                        max-width: none;
+                    }
+                    .why-num {
+                        font-size: 0.72rem;
+                        color: rgba(21,51,232,0.65);
+                    }
                     .sluzba-desc-wrap {
                         display: none;
                     }

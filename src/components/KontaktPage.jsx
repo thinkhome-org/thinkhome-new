@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import KontaktForm from "./KontaktForm";
 
 function CopyButton({ value }) {
     const [copied, setCopied] = useState(false);
@@ -86,7 +87,6 @@ export default function KontaktPage() {
 
             <main style={{
                 padding: "clamp(6rem, 14vw, 10rem) clamp(1.5rem, 8vw, 7rem) clamp(4rem, 8vw, 6rem)",
-                maxWidth: "1100px",
             }}>
                 {/* Header */}
                 <div style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
@@ -120,6 +120,8 @@ export default function KontaktPage() {
                         Ozvěte se nám s jakýmkoliv dotazem, poptávkou nebo návrhem spolupráce.
                     </p>
                 </div>
+
+                <KontaktForm />
 
                 {/* Contact grid */}
                 <div className="kontakt-grid">

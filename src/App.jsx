@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import { NavigationContext } from './context/navigate';
@@ -8,6 +8,7 @@ import KontaktPage from './components/KontaktPage';
 import SluzbyPage, { ServiceDetail } from './components/SluzbyPage';
 import ONasPage from './components/ONasPage';
 import GdprPage from './components/GdprPage';
+import ReferencePage from './components/ReferencePage';
 import WebMcpBridge from './components/WebMcpBridge';
 import ZammadChat from './components/ZammadChat';
 import sluzby from './data/sluzby.json';
@@ -61,6 +62,8 @@ export default function App() {
                     <Route path="/sluzby" element={<SluzbyPage />} />
                     <Route path="/sluzby/:id" element={<ServiceDetailWrapper />} />
                     <Route path="/o-nas" element={<ONasPage />} />
+                    <Route path="/reference" element={<ReferencePage />} />
+                    <Route path="/references" element={<Navigate to="/reference" replace />} />
                     <Route path="/kontakt" element={<KontaktPage />} />
                     <Route path="/gdpr" element={<GdprPage />} />
                 </Routes>

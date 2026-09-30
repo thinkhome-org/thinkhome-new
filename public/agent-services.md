@@ -2,28 +2,34 @@
 
 This markdown document summarizes the public services listed on thinkhome.cz.
 
-## Spravované IT
+## Správa hardware a sítí
 
-- Route: `/sluzby/spravovane-it`
-- Summary: Kompletní péče o infrastrukturu, servery, sítě a koncové stanice s proaktivní správou.
+- Route: `/sluzby/sprava-hardware-a-siti`
+- Summary: Správa a servis počítačů, sítí, serverů a úložišť, se zásahem na místě i podporou na dálku.
 - Highlights:
-  - Nepřetržitý monitoring 24/7
-  - Proaktivní správa serverů a sítí
-  - Správa koncových stanic a zařízení
-  - Pravidelné reporty a konzultace
-  - SLA s garantovanou dobou odezvy
+  - Správa a servis počítačů, notebooků a tiskáren
+  - Návrh, zapojení a údržba spolehlivé Wi-Fi a lokální sítě
+  - Správa serverů a datových úložišť
+  - Rychlý zásah na místě i podpora na dálku
 
-## Anonymizace osob
+## Kyberbezpečnost a ochrana dat
 
-- Route: `/sluzby/anonymizace-osob`
-- Summary: Ochrana jednotlivců i organizací proti sledování, sběru dat a odposlechu pomocí principů OPSEC.
+- Route: `/sluzby/kyberbezpecnost-a-ochrana-dat`
+- Summary: Ochrana dat žáků, klientů a zaměstnanců, zálohování a bezpečnost pro školství a veřejný sektor.
 - Highlights:
-  - Bezpečnostní audit a minimalizace digitální stopy
-  - Anonymní komunikace a šifrovaná infrastruktura
-  - Ochrana proti sledování a profilování
-  - Protiodposlechová opatření a kontrola prostředí
-  - Anonymizace obrazových záznamů a fyzických identifikátorů
-  - Právní a regulatorní rámec (GDPR a ochrana soukromí)
+  - Základní kybernetická hygiena pro zaměstnance a učitele
+  - Nastavení spolehlivého automatického zálohování
+  - Ochrana zařízení před viry, malwarem a úniky dat
+  - Plnění nároků na bezpečnost pro školství a veřejný sektor
+
+## Weby a digitální prezentace
+
+- Route: `/sluzby/weby-a-digitalni-prezentace`
+- Summary: Zřízení a správa firemních a školních webů včetně vizuální identity a průběžné údržby.
+- Highlights:
+  - Zřízení a správa firemních či školních webů
+  - Pravidelná údržba, aktualizace a dohled nad chodem
+  - Vytvoření základní vizuální identity — logo, šablony, jednotný styl
 
 ## AI řešení
 
@@ -35,47 +41,3 @@ This markdown document summarizes the public services listed on thinkhome.cz.
   - Počítačové vidění — detekce, klasifikace, anonymizace
   - Integrace AI do stávajících firemních systémů
   - Pilotní projekty a proof-of-concept v krátkém čase
-
-## Kybernetická bezpečnost
-
-- Route: `/sluzby/kyberneticka-bezpecnost`
-- Summary: Audity, penetrační testy, firewalling, školení a incident response.
-- Highlights:
-  - Bezpečnostní audity a penetrační testy
-  - Nastavení a správa firewallu
-  - Ochrana emailové komunikace
-  - Školení zaměstnanců — phishing a sociální inženýrství
-  - Incident response a krizová podpora
-
-## Cloud & infrastruktura
-
-- Route: `/sluzby/cloud-a-infrastruktura`
-- Summary: Návrh, migrace a provoz cloudových i hybridních řešení.
-- Highlights:
-  - Migrace do cloudu (Microsoft 365, Azure)
-  - Návrh a správa privátního cloudu
-  - Hybridní infrastruktura
-  - Zálohování a disaster recovery
-  - Licencování a optimalizace nákladů
-
-## Helpdesk & podpora
-
-- Route: `/sluzby/helpdesk`
-- Summary: Vzdálená i on-site podpora s přehledem požadavků a správou uživatelů.
-- Highlights:
-  - Vzdálená i on-site podpora
-  - Ticketovací systém s přehledem požadavků
-  - Podpora v češtině i angličtině
-  - Pravidelné návštěvy na pracovišti
-  - Správa uživatelských účtů a přístupů
-
-## Sítě & konektivita
-
-- Route: `/sluzby/site-a-konektivita`
-- Summary: Návrh, instalace a správa podnikových sítí, WiFi, LAN a VPN.
-- Highlights:
-  - Návrh a instalace LAN/WiFi sítí
-  - VPN a vzdálený přístup
-  - Správa síťových prvků (switch, router, AP)
-  - Segmentace sítě a VLAN
-  - Dohled nad dostupností a výkonem

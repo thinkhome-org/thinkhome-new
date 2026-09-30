@@ -46,6 +46,7 @@ export default function Footer() {
                         <span className="footer-col-label">Stránky</span>
                         <a href="/" onClick={(e) => navLink('/', e)} className="footer-link">Domů</a>
                         <a href="/sluzby" onClick={(e) => navLink('/sluzby', e)} className="footer-link">Služby</a>
+                        <a href="/reference" onClick={(e) => navLink('/reference', e)} className="footer-link">Reference</a>
                     </div>
                     <div className="footer-col">
                         <span className="footer-col-label">Firma</span>

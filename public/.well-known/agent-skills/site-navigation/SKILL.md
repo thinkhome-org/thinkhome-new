@@ -8,6 +8,7 @@ Use this skill when you need to move through the public ThinkHome website and ch
 - `/sluzby` — all services
 - `/sluzby/{serviceId}` — one service detail page
 - `/o-nas` — company background
+- `/reference` — references, partners, and trust signals (Google Cloud Reseller Partner, GDPR)
 - `/kontakt` — contact and legal information
 - `/gdpr` — privacy and GDPR page
 
@@ -16,6 +17,7 @@ Use this skill when you need to move through the public ThinkHome website and ch
 - You need the main company overview.
 - You need the public service catalog.
 - You need the public contact page.
+- You need references, partners, or trust signals.
 - You need the public GDPR page.
 
 ## Notes

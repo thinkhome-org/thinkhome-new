@@ -4,7 +4,7 @@ This document gives AI agents a stable summary of the public content on https://
 
 ## What ThinkHome does
 
-ThinkHome s.r.o. provides managed IT, cybersecurity, cloud and infrastructure services, AI implementation, privacy-focused anonymization work, helpdesk support, and network connectivity services for organizations in the Czech market.
+ThinkHome s.r.o. provides hardware and network management, cybersecurity and data protection, websites and digital presentation, and AI implementation for companies, schools, and the public sector in the Czech market.
 
 ## Primary public pages
 
@@ -12,6 +12,7 @@ ThinkHome s.r.o. provides managed IT, cybersecurity, cloud and infrastructure se
 - `/sluzby` — service catalog overview
 - `/sluzby/{serviceId}` — individual service detail pages
 - `/o-nas` — company background
+- `/reference` — references, partners, and trust signals
 - `/kontakt` — contact and legal information
 - `/gdpr` — privacy and GDPR information
 
