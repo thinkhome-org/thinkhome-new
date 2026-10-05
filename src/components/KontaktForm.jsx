@@ -268,11 +268,11 @@ export default function KontaktForm() {
                     margin-bottom: clamp(3rem, 6vw, 4.5rem);
                 }
                 .inquiry-kicker {
-                    font-size: 0.7rem;
-                    font-weight: 700;
-                    letter-spacing: 0.18em;
-                    text-transform: uppercase;
-                    color: rgba(21,51,232,0.75);
+                    font-size: 1rem;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    text-transform: none;
+                    color: rgba(21,51,232,0.82);
                     margin: 0 0 1rem;
                 }
                 .inquiry-title {
@@ -497,8 +497,8 @@ export default function KontaktForm() {
                         max-width: none;
                     }
                     .inquiry-kicker {
-                        font-size: 0.78rem;
-                        color: rgba(21,51,232,0.9);
+                        font-size: 1rem;
+                        color: rgba(21,51,232,0.82);
                     }
                 }
             `}</style>

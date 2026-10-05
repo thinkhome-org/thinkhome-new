@@ -50,7 +50,17 @@ export default function GdprPage() {
 
     useEffect(() => {
         document.title = "Ochrana osobních údajů (GDPR) – thinkhome";
-        return () => { document.title = "thinkhome – Kompletní IT pod jednou střechou"; };
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement("link");
+            canonical.rel = "canonical";
+            document.head.appendChild(canonical);
+        }
+        canonical.href = "https://thinkhome.org/gdpr";
+        return () => {
+            document.title = "thinkhome – Kompletní IT pod jednou střechou";
+            canonical.href = "https://thinkhome.org/";
+        };
     }, []);
 
     return (
@@ -78,7 +88,7 @@ export default function GdprPage() {
                     </h1>
                     <p style={{ fontSize: "clamp(0.875rem, 1.3vw, 1rem)", color: "#7a8fc4", margin: 0, lineHeight: 1.6 }}>
                         Zásady zpracování osobních údajů v souladu s nařízením GDPR (EU) 2016/679.<br />
-                        Poslední aktualizace: 19. března 2026
+                        Poslední aktualizace: 5. října 2026
                     </p>
                 </div>
 
@@ -90,13 +100,16 @@ export default function GdprPage() {
                     <div>
                         <p style={pStyle}>Správcem vašich osobních údajů je:</p>
                         <div style={{ background: "#f4f6fd", borderRadius: "12px", padding: "1.25rem 1.5rem", marginBottom: "1rem", fontSize: "clamp(0.875rem, 1.3vw, 1rem)", color: "#2a3f8f", lineHeight: 1.75 }}>
-                            <strong>Thinkhome s.r.o.</strong><br />
-                            Se sídlem v České republice<br />
-                            IČO: bude doplněno po zápisu do OR<br />
-                            Kontaktní e-mail: <a href="mailto:info@thinkhome.cz" style={{ color: BLUE }}>info@thinkhome.cz</a>
+                            <strong>ThinkHome s.r.o.</strong><br />
+                            Rytířova 777/3, 143 00 Praha — Kamýk<br />
+                            IČO: 23893591, DIČ: CZ23893591<br />
+                            Spisová značka C 434666 vedená u Městského soudu v Praze<br />
+                            E-mail: <a href="mailto:info@thinkhome.org" style={{ color: BLUE }}>info@thinkhome.org</a><br />
+                            Telefon: <a href="tel:+420728981602" style={{ color: BLUE }}>+420 728 981 602</a><br />
+                            Datová schránka: hujt7i5
                         </div>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
-                            Thinkhome s.r.o. (dále jen „správce" nebo „my") zpracovává osobní údaje v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a platnou českou legislativou.
+                            ThinkHome s.r.o. (dále jen „správce“ nebo „my“) zpracovává osobní údaje podle nařízení Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a českých právních předpisů. Pro záležitosti ochrany osobních údajů pište na <a href="mailto:info@thinkhome.org" style={{ color: BLUE }}>info@thinkhome.org</a>.
                         </p>
                     </div>
                 </div>
@@ -107,15 +120,15 @@ export default function GdprPage() {
                 <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>2. Jaké osobní údaje zpracováváme</p>
                     <div>
-                        <p style={pStyle}>V závislosti na způsobu, jakým nás kontaktujete nebo využíváte naše služby, můžeme zpracovávat tyto kategorie osobních údajů:</p>
+                        <p style={pStyle}>Na tomto webu zpracováváme údaje, které nám sami předáte, a omezené technické údaje o návštěvě:</p>
                         <ul style={ulStyle}>
-                            <li style={liStyle}>Identifikační údaje – jméno a příjmení, název firmy, IČO</li>
-                            <li style={liStyle}>Kontaktní údaje – e-mailová adresa, telefonní číslo, adresa sídla</li>
-                            <li style={liStyle}>Komunikační údaje – obsah zpráv zaslaných prostřednictvím kontaktního formuláře nebo e-mailu</li>
-                            <li style={liStyle}>Technické údaje – IP adresa, typ prohlížeče, cookies (pouze při návštěvě webu)</li>
-                            <li style={liStyle}>Smluvní a fakturační údaje – při uzavření smlouvy o poskytování služeb</li>
+                            <li style={liStyle}>Kontaktní formulář na stránce Kontakt — jméno, e-mail nebo telefon a text poptávky</li>
+                            <li style={liStyle}>E-mail, telefon a datová schránka — údaje, které nám sami pošlete</li>
+                            <li style={liStyle}>Chat na webu — obsah zprávy a technický identifikátor relace v systému na servis.thinkhome.org</li>
+                            <li style={liStyle}>Návštěva webu — adresa zobrazené stránky, přibližná země, typ zařízení a prohlížeče a údaje o rychlosti načtení. Tyto údaje nespojujeme s vaším jménem.</li>
+                            <li style={liStyle}>Smluvní a fakturační údaje — jen pokud spolu uzavřeme smlouvu o poskytování služeb</li>
                         </ul>
-                        <p style={{ ...pStyle, marginBottom: 0 }}>Nezpracováváme zvláštní kategorie osobních údajů (citlivé údaje) ve smyslu čl. 9 GDPR.</p>
+                        <p style={{ ...pStyle, marginBottom: 0 }}>Nezpracováváme zvláštní kategorie osobních údajů (citlivé údaje) ve smyslu čl. 9 GDPR. Web nemá newsletter.</p>
                     </div>
                 </div>
 
@@ -127,10 +140,10 @@ export default function GdprPage() {
                     <div>
                         <p style={pStyle}>Vaše osobní údaje zpracováváme na základě těchto právních titulů:</p>
                         <ul style={{ ...ulStyle, marginBottom: 0 }}>
-                            <li style={liStyle}>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR) – zpracování nezbytné pro poskytování sjednaných IT služeb</li>
-                            <li style={liStyle}>Oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR) – ochrana před podvody, bezpečnost sítí, přímý marketing vůči stávajícím klientům</li>
-                            <li style={liStyle}>Souhlas (čl. 6 odst. 1 písm. a) GDPR) – zasílání obchodních sdělení osobám, které o to požádaly</li>
-                            <li style={liStyle}>Právní povinnost (čl. 6 odst. 1 písm. c) GDPR) – archivace daňových dokladů, povinnosti dle zákona o účetnictví</li>
+                            <li style={liStyle}>Kroky před uzavřením smlouvy (čl. 6 odst. 1 písm. b) GDPR) — vyřízení poptávky, kterou jste sami odeslali</li>
+                            <li style={liStyle}>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR) — poskytování sjednaných IT služeb, pokud spolupráci uzavřeme</li>
+                            <li style={liStyle}>Oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR) — odpověď na dotaz nebo chat, který jste sami zahájili, a měření návštěvnosti a rychlosti webu bez cookies</li>
+                            <li style={liStyle}>Právní povinnost (čl. 6 odst. 1 písm. c) GDPR) — uchování účetních a daňových dokladů</li>
                         </ul>
                     </div>
                 </div>
@@ -141,12 +154,11 @@ export default function GdprPage() {
                 <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
                     <p style={labelStyle}>4. Doba uchování osobních údajů</p>
                     <div>
-                        <p style={pStyle}>Osobní údaje uchováváme pouze po dobu nezbytně nutnou pro splnění účelu, pro který byly shromážděny:</p>
+                        <p style={pStyle}>Osobní údaje uchováváme jen po dobu potřebnou k danému účelu:</p>
                         <ul style={{ ...ulStyle, marginBottom: 0 }}>
-                            <li style={liStyle}>Smluvní dokumentace a fakturační údaje – po dobu trvání smluvního vztahu a následně 10 let dle zákona o účetnictví</li>
-                            <li style={liStyle}>Kontaktní dotazy a komunikace – 3 roky od poslední komunikace</li>
-                            <li style={liStyle}>Marketingová sdělení – do odvolání souhlasu</li>
-                            <li style={liStyle}>Technické logy a cookies – v souladu s nastavením, maximálně 13 měsíců</li>
+                            <li style={liStyle}>Poptávky z e-mailu a chatu — po dobu vyřízení a poté nejdéle 3 roky, pokud z nich nevznikne smlouva. Tříletá lhůta odpovídá obecné promlčecí době.</li>
+                            <li style={liStyle}>Smluvní a fakturační údaje — po dobu smlouvy a poté po dobu uloženou daňovými a účetními předpisy. U daňových dokladů je to zpravidla 10 let.</li>
+                            <li style={liStyle}>Údaje o návštěvnosti a rychlosti webu — v agregované podobě u provozovatele hostingu, bez cookie, podle které bychom vás poznali</li>
                         </ul>
                     </div>
                 </div>
@@ -158,10 +170,15 @@ export default function GdprPage() {
                     <p style={labelStyle}>5. Příjemci osobních údajů</p>
                     <div>
                         <p style={pStyle}>
-                            Vaše osobní údaje neprodáváme třetím stranám. V nezbytném rozsahu je sdílíme pouze s důvěryhodnými zpracovateli, kteří zajišťují technický provoz našich služeb (cloudová infrastruktura, e-mailové systémy, účetní software). Všichni zpracovatelé jsou vázáni smlouvou o zpracování osobních údajů a zaručují odpovídající úroveň ochrany.
+                            Osobní údaje neprodáváme. Na webu je předáváme jen v rozsahu nutném k provozu stránek a k vyřízení toho, co nám napíšete:
                         </p>
+                        <ul style={ulStyle}>
+                            <li style={liStyle}>Vercel Inc. (USA) — hosting webu a nástroje Vercel Web Analytics a Speed Insights. Měří návštěvnost a rychlost načtení bez cookies a bez reklamního profilu. Předání do USA probíhá na základě smluvních záruk tohoto poskytovatele, zejména standardních smluvních doložek.</li>
+                            <li style={liStyle}>Chat na servis.thinkhome.org — zprávy z chatu ukládáme ve vlastním systému Zammad, abychom mohli odpovědět. Do reklamních sítí je nepředáváme.</li>
+                            <li style={liStyle}>E-mail info@thinkhome.org — zpráva, kterou odešlete, skončí v naší schránce.</li>
+                        </ul>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
-                            Osobní údaje nepředáváme do třetích zemí mimo EHP, pokud není zajištěna odpovídající úroveň ochrany ve smyslu GDPR (např. standardní smluvní doložky).
+                            Pokud z poptávky vznikne zakázka, můžeme údaje v nezbytném rozsahu předat účetní nebo subdodavateli, který se na plnění podílí. Takový příjemce je vázán mlčenlivostí nebo smlouvou o zpracování osobních údajů.
                         </p>
                     </div>
                 </div>
@@ -184,7 +201,7 @@ export default function GdprPage() {
                             <li style={liStyle}>Právo podat stížnost – u dozorového úřadu (Úřad pro ochranu osobních údajů, www.uoou.cz)</li>
                         </ul>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
-                            Vaše žádosti vyřizujeme bez zbytečného odkladu, nejpozději do 30 dnů. Pro uplatnění práv nás kontaktujte na <a href="mailto:info@thinkhome.cz" style={{ color: BLUE }}>info@thinkhome.cz</a>.
+                            Vaše žádosti vyřizujeme bez zbytečného odkladu, nejpozději do 30 dnů. Pro uplatnění práv nám napište na <a href="mailto:info@thinkhome.org" style={{ color: BLUE }}>info@thinkhome.org</a> nebo do datové schránky hujt7i5. Stížnost můžete podat u Úřadu pro ochranu osobních údajů, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" style={{ color: BLUE }}>www.uoou.cz</a>.
                         </p>
                     </div>
                 </div>
@@ -193,10 +210,16 @@ export default function GdprPage() {
 
                 {/* 7. Cookies */}
                 <div className="gdpr-section" style={{ display: "grid", gridTemplateColumns: "clamp(8rem, 18%, 14rem) 1fr", gap: "clamp(2rem, 5vw, 5rem)", alignItems: "start" }}>
-                    <p style={labelStyle}>7. Cookies</p>
+                    <p style={labelStyle}>7. Formuláře, chat a cookies</p>
                     <div>
+                        <p style={pStyle}>
+                            Kontaktní formulář údaje neukládá na server webu. Po dokončení kroků se otevře váš e-mailový program s předvyplněnou zprávou na <a href="mailto:info@thinkhome.org" style={{ color: BLUE }}>info@thinkhome.org</a>. K nám se údaje dostanou až ve chvíli, kdy e-mail skutečně odešlete. U formuláře je odkaz na tuto stránku.
+                        </p>
+                        <p style={pStyle}>
+                            Chat je na všech stránkách. Když do něj napíšete, zpráva se uloží v systému na servis.thinkhome.org, abychom mohli odpovědět. Prohlížeč si může pamatovat technický identifikátor této relace, aby konverzace pokračovala. Není to reklamní cookie a chat neslouží k cílení reklamy.
+                        </p>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
-                            Náš web může používat technické cookies nezbytné pro správné fungování stránek. Analytické nebo marketingové cookies používáme pouze na základě vašeho souhlasu. Svá nastavení cookies můžete kdykoli změnit v nastavení prohlížeče.
+                            Web nepoužívá reklamní ani remarketingové cookies a nezobrazuje lištu se souhlasem, protože volitelné sledovací cookies nenasazujeme. Vercel Web Analytics a Speed Insights běží bez cookies. Provozovatel hostingu může krátkodobě zpracovat IP adresu v provozních záznamech kvůli doručení stránky a zabezpečení. Tyto záznamy nespojujeme s formulářem ani s chatem.
                         </p>
                     </div>
                 </div>
@@ -208,7 +231,7 @@ export default function GdprPage() {
                     <p style={labelStyle}>8. Zabezpečení osobních údajů</p>
                     <div>
                         <p style={{ ...pStyle, marginBottom: 0 }}>
-                            Přijímáme vhodná technická a organizační opatření k ochraně osobních údajů před neoprávněným přístupem, ztrátou nebo zničením. Zahrnují mimo jiné šifrování přenosu dat (TLS/HTTPS), řízení přístupových práv, pravidelné bezpečnostní audity a školení zaměstnanců.
+                            Web běží přes HTTPS. K e-mailu a k záznamům chatu mají přístup jen lidé, kteří komunikaci vyřizují.
                         </p>
                     </div>
                 </div>

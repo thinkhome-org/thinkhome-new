@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import TeamSection from "./TeamSection";
 import { useAppNavigate } from "../context/navigate";
 
 const BLUE = "#1533e8";
@@ -39,11 +40,11 @@ export default function ONasPage() {
                 <div className="onas-header-row" style={{ marginBottom: "clamp(3.5rem, 7vw, 5.5rem)" }}>
                     <div>
                         <p style={{
-                            fontSize: "0.7rem",
-                            fontWeight: 700,
-                            letterSpacing: "0.18em",
-                            textTransform: "uppercase",
-                            color: "#7a8fc4",
+                            fontSize: "1rem",
+                            fontWeight: 500,
+                            letterSpacing: "0",
+                            textTransform: "none",
+                            color: "rgba(21,51,232,0.82)",
                             margin: "0 0 1.25rem",
                         }}>O nás</p>
 
@@ -84,11 +85,12 @@ export default function ONasPage() {
                 {/* ── Co děláme ──────────────────────────────── */}
                 <div className="onas-section-row" style={{ marginBottom: "clamp(3.5rem, 7vw, 5.5rem)" }}>
                     <p style={{
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "#7a8fc4",
+                        fontSize: "1rem",
+                        fontWeight: 500,
+                        letterSpacing: "0",
+                        textTransform: "none",
+                        lineHeight: 1.4,
+                        color: "rgba(21,51,232,0.82)",
                         margin: 0,
                         paddingTop: "0.2rem",
                         flexShrink: 0,
@@ -114,14 +116,15 @@ export default function ONasPage() {
                 }} />
 
                 {/* ── Proč ThinkHome ─────────────────────────── */}
-                <div className="onas-section-row" style={{ marginBottom: "clamp(3.5rem, 7vw, 5.5rem)" }}>
+                <div className="onas-section-row">
                     <div style={{ flexShrink: 0 }}>
                         <p style={{
-                            fontSize: "0.7rem",
-                            fontWeight: 700,
-                            letterSpacing: "0.18em",
-                            textTransform: "uppercase",
-                            color: "#7a8fc4",
+                            fontSize: "1rem",
+                            fontWeight: 500,
+                            letterSpacing: "0",
+                            textTransform: "none",
+                            lineHeight: 1.4,
+                            color: "rgba(21,51,232,0.82)",
                             margin: "0 0 0.75rem",
                         }}>Proč &lt;thinkhome&gt;</p>
                         <p style={{
@@ -148,13 +151,9 @@ export default function ONasPage() {
                     </p>
                 </div>
 
-                {/* ── Divider ────────────────────────────────── */}
-                <div style={{
-                    width: "100%",
-                    height: "1px",
-                    background: "#e4e9f7",
-                    marginBottom: "clamp(3rem, 6vw, 5rem)",
-                }} />
+                <div className="onas-team">
+                    <TeamSection />
+                </div>
 
                 {/* ── CTA ────────────────────────────────────── */}
                 <div className="onas-cta-row">
@@ -207,12 +206,19 @@ export default function ONasPage() {
                     }
                 }
 
+                .onas-team .team {
+                    margin-top: clamp(3rem, 6vw, 5rem);
+                }
+
                 .onas-cta-row {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     gap: clamp(2rem, 5vw, 4rem);
                     flex-wrap: wrap;
+                    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+                    padding-top: clamp(2.5rem, 5vw, 4rem);
+                    border-top: 1px solid #e4e9f7;
                 }
 
                 .onas-cta-btn {

@@ -11,8 +11,8 @@ ThinkHome s.r.o. provides hardware and network management, cybersecurity and dat
 - `/` — homepage and company overview
 - `/sluzby` — service catalog overview
 - `/sluzby/{serviceId}` — individual service detail pages
-- `/o-nas` — company background
-- `/reference` — references, team, partners, and trust signals
+- `/o-nas` — company background and team
+- `/reference` — partners and trust signals
 - `/kontakt` — contact and legal information
 - `/gdpr` — privacy and GDPR information
 

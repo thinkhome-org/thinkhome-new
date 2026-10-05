@@ -46,11 +46,12 @@ export default function TrustSignals() {
                     </div>
                     <div className="trust-copy">
                         <div className="trust-title-row">
-                            <p className="trust-name">Google Cloud Reseller Partner</p>
-                            <span className="trust-pill">První tier</span>
+                            <p className="trust-name">Google Workspace &amp; Google Cloud Reseller</p>
                         </div>
                         <p className="trust-body">
-                            Jsme reseller partner Google Cloud v prvním tieru programu.
+                            Jsme součástí Google Cloud Partner Network se schváleným Sell modelem.
+                            Pro zákazníky dodáváme a spravujeme Google Cloud, Google Workspace a ChromeOS
+                            prostřednictvím distribučního partnera TD SYNNEX.
                         </p>
                     </div>
                 </li>
@@ -96,13 +97,14 @@ export default function TrustSignals() {
                 }
 
                 .trust-label {
-                    font-size: 0.7rem;
-                    font-weight: 700;
-                    letter-spacing: 0.18em;
-                    text-transform: uppercase;
-                    color: #7a8fc4;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    text-transform: none;
+                    line-height: 1.4;
+                    color: rgba(21,51,232,0.82);
                     margin: 0;
-                    padding-top: 0.35rem;
+                    padding-top: 0.15rem;
                 }
 
                 .trust-lead {
@@ -205,27 +207,13 @@ export default function TrustSignals() {
                     letter-spacing: -0.01em;
                 }
 
-                .trust-pill {
-                    display: inline-flex;
-                    align-items: center;
-                    font-size: 0.62rem;
-                    font-weight: 700;
-                    letter-spacing: 0.12em;
-                    text-transform: uppercase;
-                    color: #1533e8;
-                    border: 1px solid rgba(21,51,232,0.28);
-                    border-radius: 999px;
-                    padding: 0.28rem 0.65rem;
-                    line-height: 1;
-                }
-
                 .trust-body {
                     font-size: clamp(0.85rem, 1.15vw, 0.95rem);
                     font-weight: 400;
                     color: rgba(21,51,232,0.65);
                     line-height: 1.7;
                     margin: 0;
-                    max-width: 36ch;
+                    max-width: 52ch;
                 }
 
                 .trust-link {

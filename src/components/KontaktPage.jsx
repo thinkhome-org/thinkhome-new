@@ -91,11 +91,11 @@ export default function KontaktPage() {
                 {/* Header */}
                 <div style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
                     <p className="kontakt-header-label" style={{
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "rgba(21,51,232,0.75)",
+                        fontSize: "1rem",
+                        fontWeight: 500,
+                        letterSpacing: "0",
+                        textTransform: "none",
+                        color: "rgba(21,51,232,0.82)",
                         margin: "0 0 1.25rem",
                     }}>Kontakt</p>
                     <h1 style={{
@@ -213,11 +213,11 @@ export default function KontaktPage() {
                 }
 
                 .kontakt-label {
-                    font-size: 0.7rem;
-                    font-weight: 700;
-                    letter-spacing: 0.15em;
-                    text-transform: uppercase;
-                    color: rgba(21,51,232,0.75);
+                    font-size: 1rem;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    text-transform: none;
+                    color: rgba(21,51,232,0.82);
                     margin: 0 0 0.4rem;
                 }
 
@@ -263,12 +263,12 @@ export default function KontaktPage() {
 
                 @media (max-width: 767px) {
                     .kontakt-header-label {
-                        font-size: 0.78rem !important;
-                        color: rgba(21,51,232,0.9) !important;
+                        font-size: 1rem !important;
+                        color: rgba(21,51,232,0.82) !important;
                     }
                     .kontakt-label {
-                        font-size: 0.78rem;
-                        color: rgba(21,51,232,0.9);
+                        font-size: 1rem;
+                        color: rgba(21,51,232,0.82);
                     }
                     .kontakt-note {
                         font-size: 0.88rem;
